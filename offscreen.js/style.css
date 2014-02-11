@@ -73,7 +73,7 @@ aside a:hover{
 }
 
 .tooltip__content.right-edge{
-	left: -100px;
+	left: -100px !important; /* has the upper hand compared the left side */
 }
 
 .tooltip__content.left-edge{
