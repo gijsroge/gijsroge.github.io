@@ -16,6 +16,21 @@ header{
 p{
 	margin: 0.5em 0;
 }
+aside{
+	position: fixed;
+	top: 0;
+	right: 0;
+}
+aside a{
+	background: #2a659e;
+	padding: 1em;
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+}
+aside a:hover{
+	background: #2778c5;
+}
 .item{
 	float: left;
 	width: 23%;
@@ -46,21 +61,21 @@ p{
 	line-height: 1.55em;
 	text-align: left;
 	color: #000;
-	width: 450%;
+	width: 300px;
 	visibility: hidden;
 	position: absolute;
 	top: 49px;
 	left: 50%;
-	margin-left: -225%;
+	margin-left: -150px;
 	background: #fff;
 	padding: 2em;
 	z-index: 2;
 }
 
 .tooltip__content.right-edge{
-	left: -100%;
+	left: -100px;
 }
 
 .tooltip__content.left-edge{
-	left: 100%;
+	left: 150px;
 }
