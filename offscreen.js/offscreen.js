@@ -14,16 +14,18 @@ $.fn.offscreen = function(options) {
     function offscreenInitiate(){
         var windowWidth = $(window).width();
         $($this).each(function(){
-            if(windowWidth < ($(this).offset().left + $(this).outerWidth())){
+            left = $(this).offset().left;
+            width = $(this).outerWidth();
+            if(windowWidth < (left + width)){
                 $(this).addClass(defaults.rightClass);
-            }else if(windowWidth > ($(this).offset().left + $(this).outerWidth() * 1.5)){
+            }else if(windowWidth > (left + width * 1.5)){
                 $(this).removeClass(defaults.rightClass);
             }
 
-            if(($(this).offset().left < 0)){
+            if((left < 0)){
                 console.log('added');
                 $(this).addClass(defaults.leftClass);
-            }else if(($(this).offset().left * 2 > $(this).outerWidth())){
+            }else if((left * 2 > width)){
                 console.log('removed');
                 $(this).removeClass(defaults.leftClass);
             }
