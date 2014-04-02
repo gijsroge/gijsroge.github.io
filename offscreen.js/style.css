@@ -65,7 +65,7 @@ aside a:hover{
 	width: 300px;
 	visibility: hidden;
 	position: absolute;
-	top: 49px;
+	top: 100%;
 	left: 50%;
 	margin-left: -150px;
 	background: #fff;
