@@ -1,0 +1,87 @@
+<!doctype html>
+<meta charset=utf-8>
+<meta name=description content="Enables thumbnail support for Owl Carousel 2.0">
+<title>owl Carousel 2 Thumbnail Demo</title>
+<link rel=stylesheet href=assets/normalize.css>
+<link rel=stylesheet href=assets/owl.carousel.css>
+<style>
+  *{
+      -webkit-box-sizing: border-box; /* Safari 3.0 - 5.0, Chrome 1 - 9, Android 2.1 - 3.x */
+      -moz-box-sizing: border-box;    /* Firefox 1 - 28 */
+      box-sizing: border-box;
+  }
+  body,html{
+      height: 100%;
+  }
+  img{
+    vertical-align: middle;
+  }
+  .owl-carousel{
+      height: 100%;
+  }
+  .owl-carousel .owl-item,.owl-carousel .item{
+      height: 100vh;
+  }
+  .owl-carousel .owl-item img{
+      transform-style: initial;
+      height: 100%;
+      object-fit: cover;
+  }
+  .owl-thumb-item img{
+      width: 150px;
+      height: auto;
+  }
+  .owl-thumbs{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: table;
+    width: 100%;
+    text-align: center;
+    padding: 5%;
+  }
+  .owl-thumb-item{
+    display: table-cell;
+    border: none;
+    background: none;
+    padding: 0;
+    opacity: .4;
+  }
+  .owl-thumb-item.active{
+    opacity: 1;
+  }
+</style>
+
+<div class="owl-carousel">
+    <div class="item">
+      <img src="https://unsplash.imgix.net/photo-1426200830301-372615e4ac54?fit=crop&fm=jpg&h=1080&q=75&w=1900" alt="photo by Barn Images">
+    </div>
+    <div class="item">
+      <img src="https://ununsplash.imgix.net/photo-1423753623104-718aaace6772?fit=crop&fm=jpg&h=1080&q=75&w=1900" alt="photo by Joshua Earle">
+    </div>
+    <div class="item">
+      <img src="https://ununsplash.imgix.net/photo-1421098518790-5a14be02b243?fit=crop&fm=jpg&h=1080&q=75&w=1900" alt="photo by Alexander Dimitrov">
+    </div>
+    <div class="item">
+      <img src="https://unsplash.imgix.net/photo-1423439793616-f2aa4356b37e?fit=crop&fm=jpg&h=1080&q=75&w=1900" alt="photo by Wojciech Szaturski">
+    </div>
+    <div class="item">
+      <img src="https://ununsplash.imgix.net/uploads/14127101912749510b8ed/82743738?fit=crop&fm=jpg&h=1080&q=75&w=1900" alt="photo by Kyle Szegedi">
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src=assets/owl.carousel.js></script>
+<script src=../src/OwlCarousel2Thumbs.js></script>
+<script>
+  var owl = $('.owl-carousel');
+  owl.owlCarousel({
+      loop: true,
+      items: 1,
+      thumbs: true,
+      thumbImage: true,
+      thumbContainerClass: 'owl-thumbs',
+      thumbItemClass: 'owl-thumb-item'
+  });
+</script>
+<script async="async" src="//Gijs:35729/livereload.js?snipver=1"></script>
