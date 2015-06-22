@@ -483,6 +483,7 @@ nav {
   min-width: 200px;
   position: relative;
   white-space: nowrap;
+  max-width: 950px;
   -webkit-animation: resize 4s 1 cubic-bezier(0.4, 0, 0.2, 1);
           animation: resize 4s 1 cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-animation-delay: 1s;

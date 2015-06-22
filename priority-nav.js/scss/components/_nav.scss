@@ -17,6 +17,7 @@ nav{
   min-width: 200px;
   position: relative;
   white-space: nowrap;
+  max-width: $wrapper--big;
 
   animation: resize 4s 1 $custom-ease;
   animation-delay: 1s;
