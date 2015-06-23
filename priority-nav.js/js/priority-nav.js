@@ -23,7 +23,7 @@
 
     /**
      * Default settings
-     * @type {{initClass: string, navDropdown: string, navDropdownToggle: string, mainNavWrapper: string, itemToDropdown: Function, itemToNav: Function}}
+     * @type {{initClass: string, navDropdown: string, navDropdownToggle: string, mainNavWrapper: string, moved: Function, movedBack: Function}}
      */
     var defaults = {
         initClass: "js-priorityNav",
@@ -34,12 +34,12 @@
         navDropdownLabel: "more",
         throttleDelay: 50,
         offsetPixels: 0,
-        childrenCount: true,
+        count: true,
 
         //Callbacks
-        itemToDropdown: function () {
+        moved: function () {
         },
-        itemToNav: function () {
+        movedBack: function () {
         }
     };
 
@@ -348,14 +348,14 @@
         /**
          * update count on dropdown toggle button
          */
-        if (_this.querySelector(mainNav).children.length > 0 && settings.childrenCount) {
+        if (_this.querySelector(mainNav).children.length > 0 && settings.count) {
             updateCount(_this, identifier);
         }
 
         /**
          * If item has been moved to dropdown trigger the callback
          */
-        settings.itemToDropdown();
+        settings.moved();
     };
 
 
@@ -382,14 +382,14 @@
         /**
          * update count on dropdown toggle button
          */
-        if (_this.querySelector(mainNav).children.length > 0 && settings.childrenCount) {
+        if (_this.querySelector(mainNav).children.length > 0 && settings.count) {
             updateCount(_this, identifier);
         }
 
         /**
          * If item has been moved back to the main menu trigger the callback
          */
-        settings.itemToNav();
+        settings.movedBack();
     };
 
 
