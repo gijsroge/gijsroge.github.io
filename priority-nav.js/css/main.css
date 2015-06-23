@@ -459,6 +459,8 @@ h1 {
   .github svg {
     vertical-align: middle;
     margin-right: 1.5rem; }
+  .github:hover {
+    color: #068df6; }
 
 @-webkit-keyframes resize {
   0% {
@@ -514,9 +516,9 @@ nav {
         display: none; } }
 
 .nav__dropdown {
-  padding: 4rem;
+  padding: 2rem;
   white-space: nowrap;
-  top: 100%;
+  top: 80%;
   right: 0;
   position: absolute;
   background-color: #068df6;
@@ -531,7 +533,9 @@ nav {
     -webkit-transform: rotateX(0deg);
             transform: rotateX(0deg);
     opacity: 1;
-    visibility: visible; }
+    visibility: visible;
+    box-shadow: 0 0 20px 0 rgba(49, 49, 49, 0.25);
+    transition: 300ms cubic-bezier(0.25, 2, 0.25, 1), box-shadow 1000ms cubic-bezier(0.25, 2, 0.25, 1); }
   @media (max-width: 650px) {
     .nav__dropdown {
       right: auto;
@@ -583,11 +587,15 @@ nav {
 .is-visible {
   visibility: visible; }
 
-.social a {
-  display: none; }
+.is-hidden {
+  visibility: hidden; }
 
-.social iframe {
-  margin-right: 1rem; }
+.social {
+  min-height: 25px; }
+  .social a {
+    display: none; }
+  .social iframe {
+    margin-right: 1rem; }
 
 /*
  * Layout styles (header, footer, sidebar, etc..)

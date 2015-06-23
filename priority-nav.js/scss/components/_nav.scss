@@ -60,12 +60,14 @@ nav{
     transform: rotateX(0deg);
     opacity: 1;
     visibility: visible;
+    box-shadow: 0 0 20px 0 rgba($black, 0.25);
+    transition: 300ms $custom-bounce,box-shadow 1000ms $custom-bounce;
   }
 
   $color: $blue;
-  padding: 4rem;
+  padding: 2rem;
   white-space: nowrap;
-  top: 100%;
+  top: 80%;
   right: 0;
   position: absolute;
   background-color: $color;
@@ -74,6 +76,7 @@ nav{
   transform: rotateX(-30deg);
   opacity: 0;
   visibility: hidden;
+
 
   @media (max-width: $smartphone-landscape) {
     right: auto;
@@ -131,4 +134,7 @@ nav{
 
 .is-visible{
   visibility: visible;
+}
+.is-hidden{
+  visibility: hidden;
 }

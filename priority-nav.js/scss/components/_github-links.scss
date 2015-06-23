@@ -5,4 +5,8 @@
   }
   color: $black;
   font-size: 1.6rem;
+
+  &:hover{
+    color: $blue;
+  }
 }

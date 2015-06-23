@@ -1,5 +1,4 @@
 /*! priority-nav - v0.1.0 | (c) 2015 @gijsroge | MIT license |  */
-/*! priority-nav - v0.1.0 | (c) 2015 @gijsroge | MIT license |  */
 /**
  *
  * Name v0.1.0
@@ -49,7 +48,7 @@
         navDropdownLabel: "more",
         throttleDelay: 50,
         offsetPixels: 0,
-        childrenCount: true,
+        childrenCount: false,
 
         //Callbacks
         itemToDropdown: function () {
@@ -176,34 +175,36 @@
      * @param navWrapper
      */
     var prepareHtml = function (_this) {
-        /**
-         * Create dropdow menu
-         * @type {HTMLElement}
-         */
-        toggleWrapper = document.createElement("span");
-        navDropdown = document.createElement("ul");
-        navDropdownToggle = document.createElement("button");
+        if (!_this.querySelector(settings.navDropdown) && !_this.querySelector(settings.navDropdownToggle)) {
+            /**
+             * Create dropdow menu
+             * @type {HTMLElement}
+             */
+            toggleWrapper = document.createElement("span");
+            navDropdown = document.createElement("ul");
+            navDropdownToggle = document.createElement("button");
 
-        /**
-         * Set label for dropdown toggle
-         * @type {string}
-         */
-        navDropdownToggle.innerHTML = settings.navDropdownLabel;
+            /**
+             * Set label for dropdown toggle
+             * @type {string}
+             */
+            navDropdownToggle.innerHTML = settings.navDropdownLabel;
 
-        /**
-         * Add classes so we can target elements
-         */
-        navDropdown.classList.add(settings.navDropdown.substr(1));
-        navDropdownToggle.classList.add(settings.navDropdownToggle.substr(1));
+            /**
+             * Add classes so we can target elements
+             */
+            navDropdown.classList.add(settings.navDropdown.substr(1));
+            navDropdownToggle.classList.add(settings.navDropdownToggle.substr(1));
 
-        /**
-         * Move elements to the right spot
-         */
-        _this.insertAfter(toggleWrapper, _this.querySelector(navMenu));
-        toggleWrapper.style.position = "relative";
-        toggleWrapper.appendChild(navDropdown);
-        toggleWrapper.appendChild(navDropdownToggle);
-        toggleWrapper.classList.add(settings.navDropdown.substr(1)+"-wrapper");
+            /**
+             * Move elements to the right spot
+             */
+            _this.insertAfter(toggleWrapper, _this.querySelector(navMenu));
+            toggleWrapper.style.position = "relative";
+            toggleWrapper.appendChild(navDropdown);
+            toggleWrapper.appendChild(navDropdownToggle);
+            toggleWrapper.classList.add(settings.navDropdown.substr(1)+'-wrapper');
+        }
     };
 
 
@@ -408,6 +409,7 @@
                 if(!isNaN(children[i].offsetWidth)){
                     sum += children[i].offsetWidth;
                 }
+
             }
         }
         return sum;
@@ -468,23 +470,21 @@
      */
     Element.prototype.remove = function() {
         this.parentElement.removeChild(this);
-    };
-
-    /*global HTMLCollection*/
+    }
     NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
         for(var i = 0, len = this.length; i < len; i++) {
             if(this[i] && this[i].parentElement) {
                 this[i].parentElement.removeChild(this[i]);
             }
         }
-    };
+    }
 
 
     /**
      * Destroy the current initialization.
      * @public
      */
-    priorityNav.destroy = function () {
+    priorityNav.destroy = function (_this) {
         // If plugin isn"t already initialized, stop
         if (!settings) return;
         // Remove feedback class
