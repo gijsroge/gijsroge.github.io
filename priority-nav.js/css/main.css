@@ -441,7 +441,7 @@ strong {
  */
 h1 {
   background-color: #FFF;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
   font-weight: 700;
   color: #068df6;
   padding: 2rem 4rem;
@@ -638,19 +638,6 @@ p a {
   p a:visited {
     color: #4eaffb; }
 
-body:after {
-  content: '';
-  position: fixed;
-  will-change: transform;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #FFF;
-  background-image: linear-gradient(to top, #F3F3F3 0%, #FFF 100%);
-  background-repeat: no-repeat; }
-
 .heading {
   margin: 6rem 0;
   margin-bottom: 2rem;
@@ -660,6 +647,11 @@ body:after {
 
 .bottom {
   padding-bottom: 6rem; }
+
+.bg {
+  background-color: #FFF;
+  background-image: linear-gradient(to top, #F3F3F3 0%, #FFF 100%);
+  background-repeat: no-repeat; }
 
 /*
  * Hacks & Dirty shit :)
