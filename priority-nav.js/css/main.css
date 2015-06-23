@@ -633,6 +633,11 @@ header {
 html, body {
   height: 100%; }
 
+p a {
+  color: #068df6; }
+  p a:visited {
+    color: #4eaffb; }
+
 body:after {
   content: '';
   position: fixed;
