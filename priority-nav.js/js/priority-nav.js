@@ -1,17 +1,9 @@
-/*! priority-nav - v0.1.0 | (c) 2015 @gijsroge | MIT license |  */
-/**
- *
- * Name v0.1.0
- * Priority+ pattern navigation that hides menu items based on the viewport width.
- *
- * Structure based on https://github.com/cferdinandi UMD boilerplate
- * Code inspired by http://codepen.io/lukejacksonn/pen/PwmwWV
- *
- * Free to use under the MIT License.
- * http://twitter.com/GijsRoge
- *
+/*
+ * priority-nav - v0.1.0 | (c) 2015 @gijsroge | MIT license
+ * Repository: https://github.com/gijsroge/priority-navigation.git
+ * Description: Priority+ pattern navigation that hides menu items if they don't fit on screen.
+ * Demo: http://gijsroge.github.io/priority-nav.js/
  */
-
 (function (root, factory) {
     if (typeof define === "function" && define.amd) {
         define("priorityNav", factory(root));
@@ -48,7 +40,7 @@
         navDropdownLabel: "more",
         throttleDelay: 50,
         offsetPixels: 0,
-        childrenCount: false,
+        childrenCount: true,
 
         //Callbacks
         itemToDropdown: function () {
@@ -175,36 +167,41 @@
      * @param navWrapper
      */
     var prepareHtml = function (_this) {
-        if (!_this.querySelector(settings.navDropdown) && !_this.querySelector(settings.navDropdownToggle)) {
-            /**
-             * Create dropdow menu
-             * @type {HTMLElement}
-             */
-            toggleWrapper = document.createElement("span");
-            navDropdown = document.createElement("ul");
-            navDropdownToggle = document.createElement("button");
+        /**
+         * Create dropdow menu
+         * @type {HTMLElement}
+         */
+        toggleWrapper = document.createElement("span");
+        navDropdown = document.createElement("ul");
+        navDropdownToggle = document.createElement("button");
 
-            /**
-             * Set label for dropdown toggle
-             * @type {string}
-             */
-            navDropdownToggle.innerHTML = settings.navDropdownLabel;
+        /**
+         * Set label for dropdown toggle
+         * @type {string}
+         */
+        navDropdownToggle.innerHTML = settings.navDropdownLabel;
 
-            /**
-             * Add classes so we can target elements
-             */
-            navDropdown.classList.add(settings.navDropdown.substr(1));
-            navDropdownToggle.classList.add(settings.navDropdownToggle.substr(1));
 
-            /**
-             * Move elements to the right spot
-             */
-            _this.insertAfter(toggleWrapper, _this.querySelector(navMenu));
-            toggleWrapper.style.position = "relative";
-            toggleWrapper.appendChild(navDropdown);
-            toggleWrapper.appendChild(navDropdownToggle);
-            toggleWrapper.classList.add(settings.navDropdown.substr(1)+'-wrapper');
-        }
+        /**
+         * Move elements to the right spot
+         */
+        _this.insertAfter(toggleWrapper, _this.querySelector(navMenu));
+        toggleWrapper.appendChild(navDropdown);
+        toggleWrapper.appendChild(navDropdownToggle);
+
+        /**
+         * Add classes so we can target elements
+         */
+        navDropdown.classList.add(settings.navDropdown.substr(1));
+        navDropdown.classList.add("priority-nav__dropdown");
+
+        navDropdownToggle.classList.add(settings.navDropdownToggle.substr(1));
+        navDropdownToggle.classList.add("priority-nav__dropdown-toggle");
+
+        toggleWrapper.classList.add(settings.navDropdown.substr(1)+"-wrapper");
+        toggleWrapper.classList.add("priority-nav__wrapper");
+
+        _this.classList.add("priority-nav");
     };
 
 
@@ -305,13 +302,13 @@
      */
     var showToggle = function (_this, identifier) {
         if (breaks[identifier].length < 1) {
-            _this.querySelector(navDropdownToggle).classList.add("is-hidden");
-            _this.querySelector(navDropdownToggle).classList.remove("is-visible");
-            _this.classList.remove("has-dropdown");
+            _this.querySelector(navDropdownToggle).classList.add("priority-nav-is-hidden");
+            _this.querySelector(navDropdownToggle).classList.remove("priority-nav-is-visible");
+            _this.classList.remove("priority-nav-has-dropdown");
         } else {
-            _this.querySelector(navDropdownToggle).classList.add("is-visible");
-            _this.querySelector(navDropdownToggle).classList.remove("is-hidden");
-            _this.classList.add("has-dropdown");
+            _this.querySelector(navDropdownToggle).classList.add("priority-nav-is-visible");
+            _this.querySelector(navDropdownToggle).classList.remove("priority-nav-is-hidden");
+            _this.classList.add("priority-nav-has-dropdown");
         }
     };
 
@@ -470,21 +467,23 @@
      */
     Element.prototype.remove = function() {
         this.parentElement.removeChild(this);
-    }
+    };
+
+    /*global HTMLCollection */
     NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
         for(var i = 0, len = this.length; i < len; i++) {
             if(this[i] && this[i].parentElement) {
                 this[i].parentElement.removeChild(this[i]);
             }
         }
-    }
+    };
 
 
     /**
      * Destroy the current initialization.
      * @public
      */
-    priorityNav.destroy = function (_this) {
+    priorityNav.destroy = function () {
         // If plugin isn"t already initialized, stop
         if (!settings) return;
         // Remove feedback class
@@ -496,6 +495,7 @@
         delete priorityNav.init;
         delete priorityNav.doesItFit;
     };
+
 
     /**
      * insertAfter function
