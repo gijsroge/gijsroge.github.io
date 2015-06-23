@@ -40,8 +40,7 @@
 
             <section class="wrapper">
                 <p class="heading">
-                    PriorityNav is a lightweight pure javascript plugin that will move your menu items to
-                    a dropdown if they don’t fit on one line in its parent.
+                    PriorityNav is a lightweight pure javascript plugin that will move your menu items if they don't fit its parent.
                 </p>
 
                 <div class="social">
@@ -146,10 +145,9 @@
             /**
              * Initiate priorityNav
              */
-            var nav = priorityNav;
             var wrapper = document.querySelector(".nav-wrapper");
-            nav.init({
-                navWrapper: ".nav-wrapper"
+            var nav = priorityNav.init({
+                mainNavWrapper: ".nav-wrapper"
             });
 
             /**
@@ -166,7 +164,7 @@
              * Listen for resize so we can recheck priorityNav
              */
             reCheck = function(){
-                nav.doesItFit(wrapper.getAttribute("instance"), wrapper);
+                priorityNav.doesItFit(wrapper);
             };
             addResizeListener(wrapper.parentNode, reCheck);
         </script>
