@@ -1,3 +1,9 @@
+/*
+ * priority-nav - v1.0.3 | (c) 2015 @gijsroge | MIT license
+ * Repository: https://github.com/gijsroge/priority-navigation.git
+ * Description: Priority+ pattern navigation that hides menu items if they don't fit on screen.
+ * Demo: http://gijsroge.github.io/priority-nav.js/
+ */
 (function (root, factory) {
     if (typeof define === "function" && define.amd) {
         define("priorityNav", factory(root));
