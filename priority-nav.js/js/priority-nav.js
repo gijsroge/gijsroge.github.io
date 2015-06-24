@@ -1,5 +1,5 @@
 /*
- * priority-nav - v1.0.3 | (c) 2015 @gijsroge | MIT license
+ * priority-nav - v1.0.4 | (c) 2015 @gijsroge | MIT license
  * Repository: https://github.com/gijsroge/priority-navigation.git
  * Description: Priority+ pattern navigation that hides menu items if they don't fit on screen.
  * Demo: http://gijsroge.github.io/priority-nav.js/
@@ -322,7 +322,7 @@
      * Update count on dropdown toggle button
      */
     var updateCount = function (_this, identifier) {
-        _this.querySelector(navDropdownToggle).dataset.count = breaks[identifier].length;
+        _this.querySelector(navDropdownToggle).setAttribute("count", breaks[identifier].length);
     };
 
 
