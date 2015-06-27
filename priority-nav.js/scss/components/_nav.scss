@@ -22,6 +22,10 @@ nav{
   animation: resize 4s 1 $custom-ease;
   animation-delay: 1s;
 
+  @media (max-width: 500px) {
+    text-align: right;
+  }
+
   ul{
     display: inline-block;
     list-style-type: none;
