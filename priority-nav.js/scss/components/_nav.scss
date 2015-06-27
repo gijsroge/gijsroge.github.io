@@ -86,10 +86,10 @@ nav{
 
   @media (max-width: $smartphone-landscape) {
     right: auto;
-    left: 0;
+    left: -50%;
     &:after{
-      right: auto;
-      left: 4rem;
+      right: 6rem !important;
+      left: auto;
     }
   }
 

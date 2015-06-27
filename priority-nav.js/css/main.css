@@ -542,10 +542,10 @@ nav {
   @media (max-width: 650px) {
     .nav__dropdown {
       right: auto;
-      left: 0; }
+      left: -50%; }
       .nav__dropdown:after {
-        right: auto;
-        left: 4rem; } }
+        right: 6rem !important;
+        left: auto; } }
   .nav__dropdown:after {
     content: '';
     display: block;
