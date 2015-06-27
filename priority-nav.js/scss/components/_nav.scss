@@ -20,15 +20,19 @@ nav{
   max-width: $wrapper--big;
 
 
-
-  @media (max-width: 500px) {
-    text-align: right;
+  @media (max-width: $smartphone-landscape) {
+    font-size: 70%;
+    padding: 0;
+    min-width: 100px;
+    .wrapper{
+      padding: 0 1rem;
+    }
   }
 
-  @media (min-width: 500px) {
-    animation: resize 4s 1 $custom-ease;
-    animation-delay: 1s;
-  }
+
+  animation: resize 4s 1 $custom-ease;
+  animation-delay: 1s;
+
 
   ul{
     display: inline-block;
@@ -42,6 +46,9 @@ nav{
     &:first-child{
       a{
         padding-left: 0;
+        @media (max-width: $smartphone-landscape) {
+          padding-left: .5rem;
+        }
       }
     }
   }
@@ -50,6 +57,9 @@ nav{
     display: inline-block;
     padding: 4rem 2rem;
     font-weight: $bold;
+    @media (max-width: $smartphone-landscape) {
+      padding: 2rem 1rem;
+    }
   }
   .knob{
     cursor: ew-resize;
@@ -86,9 +96,8 @@ nav{
 
   @media (max-width: $smartphone-landscape) {
     right: auto;
-    left: -50%;
+    left: -100%;
     &:after{
-      right: 6rem !important;
       left: auto;
     }
   }
@@ -121,6 +130,9 @@ nav{
     background-image: url('./../images/dist/svg/arrow-down.svg');
     background-repeat: no-repeat;
     background-position: 100% center;
+    @media (max-width: $smartphone-landscape) {
+      padding: 2rem 2rem 2rem 1rem;
+    }
   }
 
   li{
