@@ -1,9 +1,3 @@
-/*
- * priority-nav - v1.0.7 | (c) 2015 @gijsroge | MIT license
- * Repository: https://github.com/gijsroge/priority-navigation.git
- * Description: Priority+ pattern navigation that hides menu items if they don't fit on screen.
- * Demo: http://gijsroge.github.io/priority-nav.js/
- */
 (function (root, factory) {
     if (typeof define === "function" && define.amd) {
         define("priorityNav", factory(root));
@@ -25,6 +19,7 @@
     var settings = {};
     var instance = 0;
     var count = 0;
+    var options;
     var mainNavWrapper, totalWidth, restWidth, mainNav, navDropdown, navDropdownToggle, dropDownWidth, toggleWrapper;
     var viewportWidth = 0;
 
@@ -36,8 +31,8 @@
         initClass:                  "js-priorityNav", // Class that will be printed on html element to allow conditional css styling.
         mainNavWrapper:             "nav", // mainnav wrapper selector (must be direct parent from mainNav)
         mainNav:                    "ul", // mainnav selector. (must be inline-block)
-        navDropdown:                "nav__dropdown", // class used for the dropdown.
-        navDropdownToggle:          "nav__dropdown-toggle", // class used for the dropdown toggle.
+        navDropdownClassName:       "nav__dropdown", // class used for the dropdown.
+        navDropdownToggleClassName: "nav__dropdown-toggle", // class used for the dropdown toggle.
         navDropdownLabel:           "more", // Text that is used for the dropdown toggle.
         navDropdownBreakpointLabel: "menu", //button label for navDropdownToggle when the breakPoint is reached.
         breakPoint:                 500, //amount of pixels when all menu items should be moved to dropdown to simulate a mobile menu
@@ -169,7 +164,8 @@
      * Check if dropdown menu is already on page before creating it
      * @param mainNavWrapper
      */
-    var prepareHtml = function (_this) {
+    var prepareHtml = function (_this, settings) {
+
         /**
          * Create dropdow menu
          * @type {HTMLElement}
@@ -184,24 +180,36 @@
          */
         navDropdownToggle.innerHTML = settings.navDropdownLabel;
 
+        /**
+         * Set aria attributes for accessibility
+         */
+        navDropdownToggle.setAttribute("aria-controls", "menu");
+        navDropdown.setAttribute("aria-hidden", "true");
+
 
         /**
          * Move elements to the right spot
          */
+        if(_this.querySelector(mainNav).parentNode !== _this){
+            console.warn("mainNav is not a direct child of mainNavWrapper, double check please");
+            return;
+        }
+
         _this.insertAfter(toggleWrapper, _this.querySelector(mainNav));
-        toggleWrapper.appendChild(navDropdown);
+
         toggleWrapper.appendChild(navDropdownToggle);
+        toggleWrapper.appendChild(navDropdown);
 
         /**
          * Add classes so we can target elements
          */
-        navDropdown.classList.add(settings.navDropdown);
+        navDropdown.classList.add(settings.navDropdownClassName);
         navDropdown.classList.add("priority-nav__dropdown");
 
-        navDropdownToggle.classList.add(settings.navDropdownToggle);
+        navDropdownToggle.classList.add(settings.navDropdownToggleClassName);
         navDropdownToggle.classList.add("priority-nav__dropdown-toggle");
 
-        toggleWrapper.classList.add(settings.navDropdown+"-wrapper");
+        toggleWrapper.classList.add(settings.navDropdownClassName+"-wrapper");
         toggleWrapper.classList.add("priority-nav__wrapper");
 
         _this.classList.add("priority-nav");
@@ -268,6 +276,8 @@
      */
     priorityNav.doesItFit = function (_this) {
 
+        settings = extend(defaults, options || {});
+
         /**
          * Check if it is the first run
          */
@@ -297,7 +307,7 @@
             /**
              * Keep executing until all menu items that are overflowing are moved
              */
-            while (totalWidth < restWidth  && _this.querySelector(mainNav).children.length > 0 || viewportWidth < settings.breakPoint && _this.querySelector(mainNav).children.length > 0) {
+            while (totalWidth <= restWidth  && _this.querySelector(mainNav).children.length > 0 || viewportWidth < settings.breakPoint && _this.querySelector(mainNav).children.length > 0) {
                 //move item to dropdown
                 priorityNav.toDropdown(_this, identifier);
                 //recalculate widths
@@ -309,7 +319,7 @@
             /**
              * Keep executing until all menu items that are able to move back are moved
              */
-            while (totalWidth > breaks[identifier][breaks[identifier].length - 1] && viewportWidth > settings.breakPoint) {
+            while (totalWidth >= breaks[identifier][breaks[identifier].length - 1] && viewportWidth > settings.breakPoint) {
                 //move item to menu
                 priorityNav.toMenu(_this, identifier);
                 //update dropdownToggle label
@@ -321,6 +331,19 @@
              */
             if (breaks[identifier].length < 1) {
                 _this.querySelector(navDropdown).classList.remove("show");
+                //show navDropdownLabel
+                updateLabel(_this, identifier, settings.navDropdownLabel);
+            }
+
+            /**
+             * If there are no items in menu
+             */
+            if (_this.querySelector(mainNav).children.length < 1) {
+                //show navDropdownBreakpointLabel
+                _this.classList.add("is-empty");
+                updateLabel(_this, identifier, settings.navDropdownBreakpointLabel);
+            }else{
+                _this.classList.remove("is-empty");
             }
 
             /**
@@ -340,10 +363,21 @@
             _this.querySelector(navDropdownToggle).classList.add("priority-nav-is-hidden");
             _this.querySelector(navDropdownToggle).classList.remove("priority-nav-is-visible");
             _this.classList.remove("priority-nav-has-dropdown");
+
+            /**
+             * Set aria attributes for accessibility
+             */
+            _this.querySelector(".priority-nav__wrapper").setAttribute("aria-haspopup", "false");
+
         } else {
             _this.querySelector(navDropdownToggle).classList.add("priority-nav-is-visible");
             _this.querySelector(navDropdownToggle).classList.remove("priority-nav-is-hidden");
             _this.classList.add("priority-nav-has-dropdown");
+
+            /**
+             * Set aria attributes for accessibility
+             */
+            _this.querySelector(".priority-nav__wrapper").setAttribute("aria-haspopup", "true");
         }
     };
 
@@ -452,10 +486,11 @@
     };
 
 
+
     /**
      * Bind eventlisteners
      */
-    var listeners = function (_this) {
+    var listeners = function (_this, settings) {
 
         // Check if an item needs to move
         if(window.attachEvent) {
@@ -474,13 +509,23 @@
             toggleClass(_this.querySelector(navDropdown), "show");
             toggleClass(this, "is-open");
             toggleClass(_this, "is-open");
+
+            /**
+             * Toggle aria hidden for accessibility
+             */
+            if(-1 !== _this.className.indexOf( "is-open" )){
+                _this.querySelector(navDropdown).setAttribute("aria-hidden", "false");
+            }else{
+                _this.querySelector(navDropdown).setAttribute("aria-hidden", "true");
+                _this.querySelector(navDropdown).blur();
+            }
         });
 
         /*
          * Remove when clicked outside dropdown
          */
         document.addEventListener("click", function (event) {
-            if (!getClosest(event.target, settings.navDropdown) && event.target !== _this.querySelector(navDropdownToggle)) {
+            if (!getClosest(event.target, "."+settings.navDropdownClassName) && event.target !== _this.querySelector(navDropdownToggle)) {
                 _this.querySelector(navDropdown).classList.remove("show");
                 _this.querySelector(navDropdownToggle).classList.remove("is-open");
                 _this.classList.remove("is-open");
@@ -541,7 +586,18 @@
      * @param n
      * @param r
      */
-    Node.prototype.insertAfter = function(n,r) {this.insertBefore(n,r.nextSibling);};
+    if (supports && typeof Node !== "undefined"){
+        Node.prototype.insertAfter = function(n,r) {this.insertBefore(n,r.nextSibling);};
+    }
+
+    var checkForSymbols = function(string){
+        var firstChar = string.charAt(0);
+        if (firstChar === "." || firstChar === "#") {
+            return false;
+        }else{
+            return true;
+        }
+    };
 
 
     /**
@@ -551,17 +607,23 @@
      */
     priorityNav.init = function (options) {
 
-        // Feature test.
-        if (!supports){
-            console.warn("This browser doesn't support priorityNav");
-            return;
-        }
-
         /**
          * Merge user options with defaults
          * @type {Object}
          */
         settings = extend(defaults, options || {});
+
+        // Feature test.
+        if (!supports && typeof Node === "undefined"){
+            console.warn("This browser doesn't support priorityNav");
+            return;
+        }
+
+        // Options check
+        if (!checkForSymbols(settings.navDropdownClassName) || !checkForSymbols(settings.navDropdownToggleClassName)){
+            console.warn("No symbols allowed in navDropdownClassName & navDropdownToggleClassName. These are not selectors.");
+            return;
+        }
 
         /**
          * Store nodes
@@ -606,12 +668,12 @@
             /**
              * Check if we need to create the dropdown elements
              */
-            prepareHtml(_this);
+            prepareHtml(_this, settings);
 
             /**
              * Store the dropdown element
              */
-            navDropdown = "."+settings.navDropdown;
+            navDropdown = "."+settings.navDropdownClassName;
             if (!_this.querySelector(navDropdown)) {
                 console.warn("couldn't find the specified navDropdown element");
                 return;
@@ -620,7 +682,7 @@
             /**
              * Store the dropdown toggle element
              */
-            navDropdownToggle = "."+settings.navDropdownToggle;
+            navDropdownToggle = "."+settings.navDropdownToggleClassName;
             if (!_this.querySelector(navDropdownToggle)) {
                 console.warn("couldn't find the specified navDropdownToggle element");
                 return;
@@ -629,7 +691,7 @@
             /**
              * Event listeners
              */
-            listeners(_this);
+            listeners(_this, settings);
 
             /**
              * Start first check
