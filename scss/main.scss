@@ -1,0 +1,34 @@
+/*
+ * Abstractions like variables, mixins, etc...
+ */
+@import "utils/variables";
+@import "utils/easings";
+@import "utils/underline";
+
+/*
+ * Third party styles (sliders, lightbox, dropdown)
+ */
+@import "vendors/normalize";
+
+/*
+ * Base styles (typography, grids, global styles, etc..)
+ */
+@import "base/boxsizing";
+@import "base/typography";
+@import "base/flexbox-grid";
+@import "base/base";
+
+/*
+ * Components styles (specific reusable module styles)
+ */
+@import "components/icons";
+
+/*
+ * Layout styles (header, footer, sidebar, etc..)
+ */
+@import "layouts/header";
+
+/**
+ * Pages
+ */
+@import "pages/home";

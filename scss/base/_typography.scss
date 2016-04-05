@@ -1,0 +1,23 @@
+/*
+ * Sets the base font to 10px for easier math
+ */
+html {
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/*
+ * Sets the default sizing to make sure nothing is actually 10px
+ */
+body {
+  font-size: 1.8rem;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+p {
+  font-feature-settings: 'kern', 'onum', 'liga';
+}
+

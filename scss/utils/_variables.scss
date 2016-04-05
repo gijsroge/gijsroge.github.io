@@ -1,0 +1,45 @@
+/* 
+ * Wrapper 
+ */
+$wrapper: 1600px;
+$wrapper-padding: 60px;
+$mobile-wrapper-padding: 20px;
+
+/* 
+ * Media Queries 
+ */
+$largedesktop: 1300px;
+$desktop: 1100px;
+$tablet: 960px;
+$small-tablet: 860px;
+$smartphone-landscape: 800px;
+$smartphone-medium: 460px;
+$smartphone: 360px;
+
+/* 
+ * Font weights 
+ */
+$heavy: 900;
+$bold: 700;
+$semi: 600;
+$normal: 400;
+$light: 300;
+
+/*
+ * Colors
+ */
+$base: #000;
+$blue: #0076FF;
+$orange: #FF6E00;
+$purple: #2E3092;
+$yellow: #e9c500;
+$red: #FB2626;
+$green: #59d479;
+$beige: #e2d0bd;
+$black: #000;
+$grey: darken(white, 50%);
+$lightgrey: rgba(0,0,0,0.05);
+$error: #fa0000;
+$succes: $green;
+$linkColour: $blue;
+$hoverColour: lighten($linkColour, 30%);

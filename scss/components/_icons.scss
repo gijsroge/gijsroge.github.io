@@ -1,0 +1,16 @@
+/**
+ * Styles for _icons.scss
+ * @Author: Gijs Rogé
+ */
+
+.icon{
+  &-orange{
+    fill: $orange;
+  }
+  &-black{
+    fill: $base;
+  }
+  &-blue{
+    fill: $blue;
+  }
+}

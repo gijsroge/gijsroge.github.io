@@ -1,0 +1,116 @@
+/**
+ * Styles for _base.scss
+ * @Author: Gijs Rogé
+ */
+
+body {
+  max-width: 750px;
+  margin-left: 20%;
+  margin-top: 8%;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  margin-bottom: .25em;
+  span {
+    color: $green;
+  }
+
+  + p {
+    margin-top: 0;
+  }
+}
+
+p{
+  line-height: 1.75;
+  &:only-child,&:last-child{
+    margin-bottom: 0;
+  }
+}
+
+a{
+  color: $blue;
+}
+
+a[href^="http://dribbble"] {
+  color: #ea4c89;
+}
+
+/**
+ * Work box
+ */
+.work{
+  background-color: white;
+  box-shadow: 0 0 67px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0;
+  margin: 3em 0 0;
+  
+  li{
+    &:not(:last-child){
+      a{
+        border-bottom: 1px solid rgba($base, .05);
+      }
+    }
+  }
+
+  a{
+    color: $base;
+    text-decoration: none;
+    padding: 2.5em 3em;
+    display: block;
+    position: relative;
+    box-shadow: 0 0 67px rgba(0, 0, 0, 0);
+    transition: 100ms linear;
+
+
+
+    &:hover{
+      background-color: $green;
+      color: white;
+      box-shadow: 0 0 67px rgba(0, 0, 0, 0.1);
+
+      &:after{
+        opacity: 1;
+        transform: none;
+      }
+
+      svg{
+        fill: white;
+      }
+    }
+  }
+
+  h3{
+    margin: 0;
+    margin-top: -.15em; //compensate for line-height spacing
+    font-size: 1.5em;
+    font-weight: $semi;
+    display: flex;
+    align-items: baseline;
+
+    svg,img{
+      max-width: 25px;
+      max-height: 25px;
+      bottom: -.15em;
+      position: relative;
+      margin-left: .5em;
+    }
+  }
+
+  p{
+    margin-top: .35em;
+    color: $base;
+    opacity: .6;
+  }
+}
+
+/**
+ * Contact sentence
+ */
+.contact{
+  margin-top: 20%;
+  color: rgba($base, .6);
+  padding-left: 2.5em;
+}

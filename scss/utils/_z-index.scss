@@ -1,0 +1,18 @@
+/**
+ * Styles for _z-index.scss
+ * @Author: <gijs.roge@intracto.com>
+ */
+
+$z-index: (
+        above-overlay: 200,
+        overlay: 199,
+        product-thumb-hover: 2,
+);
+
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}
+
+@mixin z-index($key) {
+  z-index: z-index($key);
+}
