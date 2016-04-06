@@ -619,9 +619,6 @@ body {
     box-shadow: 0 0 67px rgba(0, 0, 0, 0.1); }
   .work li {
     opacity: .1;
-    -webkit-transform: scale(0.95);
-        -ms-transform: scale(0.95);
-            transform: scale(0.95);
     -webkit-transform-origin: center;
         -ms-transform-origin: center;
             transform-origin: center; }

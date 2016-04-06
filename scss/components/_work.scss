@@ -37,12 +37,10 @@ body{
     height: 100%;
     width: 100%;
     box-shadow: 0 0 67px rgba(0, 0, 0, 0.1);
-    //opacity: 0;
   }
 
   li {
     opacity: .1;
-    transform: scale(.95);
     transform-origin: center;
 
     &:not(:last-child) {
