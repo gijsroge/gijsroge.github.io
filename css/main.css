@@ -566,7 +566,7 @@ body {
 
 @media (max-width: 450px) {
   header {
-    margin: 3rem; } }
+    margin: 3rem 0; } }
 
 h1 {
   margin-bottom: .25em;
