@@ -536,17 +536,22 @@ p {
  */
 body {
   max-width: 750px;
-  margin-left: 20%;
-  margin-top: 8%;
+  margin-left: 35%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-top: 10%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  min-width: 320px; }
 
 h1 {
-  margin-bottom: .25em; }
+  margin-bottom: .25em;
+  margin-top: 0; }
   h1 span {
     color: #59d479; }
   h1 + p {
@@ -564,16 +569,64 @@ a[href^="http://dribbble"] {
   color: #ea4c89; }
 
 /**
- * Work box
+ * Contact sentence
  */
+.contact {
+  margin-top: 20%;
+  color: rgba(0, 0, 0, 0.6);
+  padding-left: 2.5em; }
+
+/*
+ * Components styles (specific reusable module styles)
+ */
+/**
+ * Styles for _work.scss
+ * @Author: Gijs Rog�
+ */
+@-webkit-keyframes reset {
+  to {
+    -webkit-transform: none;
+            transform: none;
+    opacity: 1; } }
+@keyframes reset {
+  to {
+    -webkit-transform: none;
+            transform: none;
+    opacity: 1; } }
+
+body {
+  -webkit-perspective: 1000px;
+          perspective: 1000px; }
+
 .work {
-  background-color: white;
-  box-shadow: 0 0 67px rgba(0, 0, 0, 0.1);
-  list-style: none;
-  padding: 0;
-  margin: 3em 0 0; }
-  .work li:not(:last-child) a {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+  background-color: transparent;
+  margin: 3em 0 0;
+  position: relative;
+  opacity: 0; }
+  .work ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 2; }
+  .work .shadow {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 67px rgba(0, 0, 0, 0.1); }
+  .work li {
+    opacity: .1;
+    -webkit-transform: scale(0.95);
+        -ms-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center; }
+    .work li:not(:last-child) a {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
   .work a {
     color: #000;
     text-decoration: none;
@@ -582,6 +635,8 @@ a[href^="http://dribbble"] {
     position: relative;
     box-shadow: 0 0 67px transparent;
     transition: 100ms linear; }
+    .work a svg {
+      transition: 100ms linear; }
     .work a:hover {
       background-color: #59d479;
       color: white;
@@ -615,17 +670,6 @@ a[href^="http://dribbble"] {
     color: #000;
     opacity: .6; }
 
-/**
- * Contact sentence
- */
-.contact {
-  margin-top: 20%;
-  color: rgba(0, 0, 0, 0.6);
-  padding-left: 2.5em; }
-
-/*
- * Components styles (specific reusable module styles)
- */
 /**
  * Styles for _icons.scss
  * @Author: Gijs Rog�

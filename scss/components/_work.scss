@@ -1,0 +1,107 @@
+/**
+ * Styles for _work.scss
+ * @Author: Gijs Rogé
+ */
+
+
+@keyframes reset {
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+body{
+  perspective: 1000px;
+}
+
+.work {
+  background-color: transparent;
+  margin: 3em 0 0;
+  position: relative;
+  opacity: 0;
+
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .shadow{
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 67px rgba(0, 0, 0, 0.1);
+    //opacity: 0;
+  }
+
+  li {
+    opacity: .1;
+    transform: scale(.95);
+    transform-origin: center;
+
+    &:not(:last-child) {
+      a {
+        border-bottom: 1px solid rgba($base, .05);
+      }
+    }
+
+  }
+
+  a {
+    color: $base;
+    text-decoration: none;
+    padding: 2.5em 3em;
+    display: block;
+    position: relative;
+    box-shadow: 0 0 67px rgba(0, 0, 0, 0);
+    transition: 100ms linear;
+
+    svg{
+      transition: 100ms linear;
+    }
+
+    &:hover {
+      background-color: $green;
+      color: white;
+      box-shadow: 0 0 67px rgba(0, 0, 0, 0.1);
+
+      &:after {
+        opacity: 1;
+        transform: none;
+      }
+
+      svg {
+        fill: white;
+      }
+    }
+  }
+
+  h3 {
+    margin: 0;
+    margin-top: -.15em; //compensate for line-height spacing
+    font-size: 1.5em;
+    font-weight: $semi;
+    display: flex;
+    align-items: baseline;
+
+    svg, img {
+      max-width: 25px;
+      max-height: 25px;
+      bottom: -.15em;
+      position: relative;
+      margin-left: .5em;
+    }
+  }
+
+  p {
+    margin-top: .35em;
+    color: $base;
+    opacity: .6;
+  }
+}

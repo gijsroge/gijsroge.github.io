@@ -5,14 +5,17 @@
 
 body {
   max-width: 750px;
-  margin-left: 20%;
-  margin-top: 8%;
+  margin-left: 35%;
+  transform: translateX(-50%);
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
+  min-width: 320px;
 }
 
 h1 {
   margin-bottom: .25em;
+  margin-top: 0;
   span {
     color: $green;
   }
@@ -35,75 +38,6 @@ a{
 
 a[href^="http://dribbble"] {
   color: #ea4c89;
-}
-
-/**
- * Work box
- */
-.work{
-  background-color: white;
-  box-shadow: 0 0 67px rgba(0, 0, 0, 0.1);
-  list-style: none;
-  padding: 0;
-  margin: 3em 0 0;
-  
-  li{
-    &:not(:last-child){
-      a{
-        border-bottom: 1px solid rgba($base, .05);
-      }
-    }
-  }
-
-  a{
-    color: $base;
-    text-decoration: none;
-    padding: 2.5em 3em;
-    display: block;
-    position: relative;
-    box-shadow: 0 0 67px rgba(0, 0, 0, 0);
-    transition: 100ms linear;
-
-
-
-    &:hover{
-      background-color: $green;
-      color: white;
-      box-shadow: 0 0 67px rgba(0, 0, 0, 0.1);
-
-      &:after{
-        opacity: 1;
-        transform: none;
-      }
-
-      svg{
-        fill: white;
-      }
-    }
-  }
-
-  h3{
-    margin: 0;
-    margin-top: -.15em; //compensate for line-height spacing
-    font-size: 1.5em;
-    font-weight: $semi;
-    display: flex;
-    align-items: baseline;
-
-    svg,img{
-      max-width: 25px;
-      max-height: 25px;
-      bottom: -.15em;
-      position: relative;
-      margin-left: .5em;
-    }
-  }
-
-  p{
-    margin-top: .35em;
-    color: $base;
-    opacity: .6;
-  }
 }
 
 /**
