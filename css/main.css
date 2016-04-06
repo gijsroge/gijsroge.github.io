@@ -564,6 +564,10 @@ body {
     body {
       padding: 2rem; } }
 
+@media (max-width: 450px) {
+  header {
+    margin: 3rem; } }
+
 h1 {
   margin-bottom: .25em;
   margin-top: 0; }
@@ -621,9 +625,6 @@ body {
   margin: 3em 0 0;
   position: relative;
   opacity: 0; }
-  @media (max-width: 450px) {
-    .work {
-      margin-top: 2rem; } }
   .work ul {
     list-style: none;
     padding: 0;
