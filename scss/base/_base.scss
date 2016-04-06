@@ -65,4 +65,8 @@ a[href^="http://dribbble"] {
   margin-top: 20%;
   color: rgba($base, .6);
   padding-left: 2.5em;
+
+  @media (max-width: 450px) {
+    padding-left: 0;
+  }
 }
