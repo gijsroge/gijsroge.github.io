@@ -3,9 +3,9 @@
  * @Author: Gijs Rogé
  */
 
-body {
+.move {
   max-width: 750px;
-  margin-top: 10%;
+  padding-top: 10%;
   
   @media (min-width: 1100px) {
     margin-left: 20%;
@@ -93,4 +93,20 @@ a[href^="http://dribbble"] {
   @media (max-width: 450px) {
     padding-left: 0;
   }
+}
+
+/**
+ * Blingbling canvas
+ */
+canvas {
+  top: 0;
+  left: 0;
+  z-index: 0;
+  position: absolute;
+  background: white;
+}
+
+.move{
+  position: relative;
+  z-index: 2;
 }
