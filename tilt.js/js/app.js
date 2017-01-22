@@ -8,7 +8,7 @@ $(() => {
 
     $('.js-destroy').on('click', function () {
         const element = $(this).closest('.js-parent').find('.js-tilt');
-        element[0].methods.destroy();
+        element.tilt.destroy.call(element);
     });
 
     $('.js-enable').on('click', function () {

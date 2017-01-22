@@ -2,7 +2,6 @@
 
 (function ($) {
     $.fn.tilt = function (options) {
-        var _this2 = this;
 
         /**
          * RequestAnimationFrame
@@ -54,8 +53,8 @@
         var getMousePositions = function getMousePositions() {
             if (event === undefined) {
                 event = {
-                    pageX: $(this).offset().left + $(this).width() / 2,
-                    pageY: $(this).offset().top + $(this).height() / 2
+                    pageX: $(this).offset().left + $(this).outerWidth() / 2,
+                    pageY: $(this).offset().top + $(this).outerHeight() / 2
                 };
             }
             return { x: event.pageX, y: event.pageY };
@@ -86,7 +85,7 @@
          *
          * @returns {{x: tilt value, y: tilt value}}
          */
-        var _getValues = function _getValues() {
+        var getValues = function getValues() {
             var width = this.clientWidth;
             var height = this.clientHeight;
             var percentageX = (this.mousePositions.x - $(this).offset().left) / width;
@@ -102,7 +101,7 @@
          * Update tilt transforms on mousemove
          */
         var updateTransforms = function updateTransforms() {
-            this.transforms = _getValues.call(this);
+            this.transforms = getValues.call(this);
 
             if (this.reset) {
                 this.reset = false;
@@ -117,43 +116,37 @@
 
             this.ticking = false;
         };
+
         /**
          * Public methods
-         * @type {{getValues: (()), reset: (()), destroy: (())}}
          */
-        this.methods = {
-            getValues: function getValues() {
-                var results = [];
-                $(_this2).each(function () {
-                    this.mousePositions = getMousePositions();
-                    results.push(_getValues.call(this));
-                });
-                return results;
-            },
+        $.fn.tilt.destroy = function () {
+            $(this).each(function () {
+                $(this).css({ 'will-change': '', 'transform': '' });
+                $(this).off('mousemove mouseenter mouseleave');
+            });
+        };
 
-            reset: function (_reset) {
-                function reset() {
-                    return _reset.apply(this, arguments);
-                }
+        $.fn.tilt.getValues = function () {
+            var results = [];
+            $(this).each(function () {
+                this.mousePositions = getMousePositions.call(this);
+                results.push(getValues.call(this));
+            });
+            return results;
+        };
 
-                reset.toString = function () {
-                    return _reset.toString();
-                };
+        $.fn.tilt.reset = function () {
+            $(this).each(function () {
+                var _this2 = this;
 
-                return reset;
-            }(function () {
-                mouseLeave();
+                this.mousePositions = getMousePositions.call(this);
+                this.settings = $(this).data('settings');
+                mouseLeave.call(this);
                 setTimeout(function () {
-                    reset = false;
-                }, _this2.settings.transition);
-            }),
-
-            destroy: function destroy() {
-                $(_this2).each(function () {
-                    $(this).css({ 'will-change': '', 'transform': '' });
-                    $(this).off('mousemove mouseenter mouseleave');
-                });
-            }
+                    _this2.reset = false;
+                }, this.settings.transition);
+            });
         };
 
         /**
@@ -179,6 +172,8 @@
             }, options);
 
             this.init = function () {
+                // Store settings
+                $(_this3).data('settings', _this3.settings);
                 bindEvents.call(_this3);
             };
 

@@ -10,7 +10,7 @@ $(function () {
 
     $('.js-destroy').on('click', function () {
         var element = $(this).closest('.js-parent').find('.js-tilt');
-        element[0].methods.destroy();
+        element.tilt.destroy.call(element);
     });
 
     $('.js-enable').on('click', function () {

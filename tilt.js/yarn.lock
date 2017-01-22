@@ -3814,9 +3814,9 @@ tildify@^1.0.0:
   dependencies:
     os-homedir "^1.0.0"
 
-tilt.js@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/tilt.js/-/tilt.js-1.0.2.tgz#1248250616663e7d5526701576a2f3bdb738ff4b"
+tilt.js@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/tilt.js/-/tilt.js-1.1.1.tgz#c5926a3424f60b5de0ebdf0d48e741d43338f649"
   dependencies:
     babel-preset-env "^1.1.8"
     gulp-babel "^6.1.2"
