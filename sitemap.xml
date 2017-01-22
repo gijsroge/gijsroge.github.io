@@ -7,7 +7,19 @@
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 <url>
+  <loc>http://gijsroge.github.io/</loc>
+  <lastmod>2017-01-22T23:22:01+00:00</lastmod>
+</url>
+<url>
+  <loc>http://gijsroge.github.io/priority-nav.js/</loc>
+  <lastmod>2017-01-22T23:22:01+00:00</lastmod>
+</url>
+<url>
+  <loc>http://gijsroge.github.io/offscreen.js/</loc>
+  <lastmod>2017-01-22T23:22:01+00:00</lastmod>
+</url>
+<url>
   <loc>http://gijsroge.github.io/tilt.js/</loc>
-  <lastmod>2017-01-22T23:19:53+00:00</lastmod>
+  <lastmod>2017-01-22T23:22:01+00:00</lastmod>
 </url>
 </urlset>
