@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tilt</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed" rel="stylesheet">
+</head>
+<body class="u-flex-set">
+
+<aside>
+    <a href="/" class="c-logo js-tilt" data-tilt-speed="200" data-tilt-maxtilt="50" data-tilt-perspective="500">
+        <span class="backdrop"></span>
+        <span>Tilt.js</span>
+    </a>
+</aside>
+<main>
+    <header>
+        <p class="u-font-large">A tiny requestAnimationFrame powered <strong>60+fps</strong><br>
+            lightweight parallax tilt effect for jQuery.</p>
+        <strong>Notices:</strong>
+        <ul>
+            <li>Requires jQuery</li>
+            <li>No CSS is needed</li>
+            <li>Install <code class="language-javascript">yarn add tilt.js</code> or <a href="https://github.com/gijsroge/tilt.js" tiltle="Download tilt.js jquery plugin from Github">download</a></li>
+            <li><a href="https://github.com/gijsroge/tilt.js" title="Extra documentation about tilt.js plugin">Documentation</a></li>
+        </ul>
+        <a href="https://twitter.com/share" class="twitter-share-button"
+           data-url="http://gijsroge.github.io/priority-nav.js/"
+           data-text="PriorityNav.js. A lightweight dependency free javascript plugin for smart responsive navigations."
+           data-via="GijsRoge">Tweet</a>
+        <script>!function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, 'script', 'twitter-wjs');</script>
+        <a class="github-button" href="https://github.com/gijsroge/priority-navigation"
+           data-count-href="/gijsroge/priority-navigation/stargazers"
+           data-count-api="/repos/gijsroge/priority-navigation#stargazers_count"
+           data-count-aria-label="# stargazers on GitHub"
+           aria-label="Star gijsroge/priority-navigation on GitHub">Star</a>
+        <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+    </header>
+
+    <article class="[ c-example ]">
+        <div class="[ c-example__demo ]">
+            <div class="[ c-example__tilt ] js-tilt" data-tilt-perspective="250" data-tilt-speed="1000"
+                 data-tilt-max="50"></div>
+
+        </div>
+        <div class="c-example__info">
+            <h3>The most basic usage:</h3>
+            <ol>
+                <li>Add <code class="language-html">&lt;script src=&quot;tilt.jquery.js&quot;&gt;&lt;/script&gt;</code>
+                    right before the closing <code class="language-html">&lt;/body&gt;</code> tag
+                </li>
+                <li>Mark your elements with <code class="language-html">&lt;span data-tilt&gt;&lt;/span&gt;</code>
+                </li>
+            </ol>
+        </div>
+    </article>
+
+    <article class="[ c-example ]">
+        <div class="[ c-example__demo ]">
+            <div class="[ c-example__tilt ] js-tilt" data-tilt-reset="false" data-tilt-speed="1000" data-tilt-max="50"
+                 data-tilt-perspective="250"></div>
+
+        </div>
+        <div class="c-example__info">
+            <h3>Keep floating:</h3>
+            <p>Setting this option will not reset the tilt element when the user mouse leaves the element.</p>
+            <pre><code class="language-javascript">$('.js-tilt').tilt({
+    reset: false
+})</code></pre>
+        </div>
+    </article>
+
+    <article class="[ c-example ]">
+        <div class="[ c-example__demo ]">
+            <div class="[ c-example__tilt ] js-tilt" data-tilt-speed="1000" data-tilt-max="20" data-tilt-scale="1.2"
+                 data-tilt-perspective="250"></div>
+
+        </div>
+        <div class="c-example__info">
+            <h3>Scale on hover</h3>
+            <p>Setting this option will scale tilt element on hover.</p>
+            <pre><code class="language-javascript">$('.js-tilt').tilt({
+    scale: 1.2
+})</code></pre>
+        </div>
+    </article>
+
+    <article class="[ c-example ]">
+        <div class="[ c-example__demo ]">
+            <div class="[ c-example__tilt ] js-tilt" data-tilt-speed="250" data-tilt-max="50" data-tilt-axis="x"
+                 data-tilt-perspective="250"></div>
+
+        </div>
+        <div class="c-example__info">
+            <h3>Disable Y axis</h3>
+            <p>Setting this option will disable the Y-Axis on the tilt element.</p>
+            <pre><code class="language-javascript">$('.js-tilt').tilt({
+    axis: x
+})</code></pre>
+        </div>
+    </article>
+
+    <article class="[ c-example ]">
+        <div class="[ c-example__demo ]">
+            <div class="[ c-example__tilt ] js-tilt" data-tilt-speed="250" data-tilt-max="50" data-tilt-axis="y"
+                 data-tilt-perspective="250"></div>
+
+        </div>
+        <div class="c-example__info">
+            <h3>Disable X axis</h3>
+            <p>Setting this option will disable the X-Axis on the tilt element.</p>
+            <pre><code class="language-javascript">$('.js-tilt').tilt({
+    axis: y
+})</code></pre>
+        </div>
+    </article>
+
+    <article class="[ c-example ] js-parent">
+        <div class="[ c-example__demo ]">
+            <div class="[ c-example__tilt ] js-tilt" data-tilt-speed="250" data-tilt-max="50"
+                 data-tilt-perspective="250"></div>
+
+        </div>
+        <div class="c-example__info">
+            <h3>Destroy method</h3>
+            <p>Call this method will remove all events and classes from the tilt element.</p>
+            <pre><code class="language-javascript">const tilt = $('.js-tilt').tilt()
+tilt[0].methods.destroy();
+</code></pre>
+            <button class="js-destroy c-button">Destroy</button>
+            <button class="js-enable c-button">Re-enable</button>
+        </div>
+    </article>
+
+    <article class="[ c-example ] js-parent">
+        <div class="[ c-example__demo ]">
+            <div class="[ c-example__tilt ] js-tilt-output" data-tilt-speed="250" data-tilt-max="50"
+                 data-tilt-perspective="250"></div>
+        </div>
+        <div class="c-example__info">
+            <h3>On change event</h3>
+            <p>The on change event wil output the x,y & percentages of tilting.</p>
+            <pre><code class="language-javascript">const tilt = $('.js-tilt').tilt()
+tilt.on('change', function(e, transforms){});
+
+</code></pre>
+            <ul class="c-example__output js-output u-font-tiny"></ul>
+        </div>
+    </article>
+
+    <article class="[ c-example ]">
+        <div>
+            <h3>Features</h3>
+            <ul>
+                <li>
+                    <p>Options can be passed with the
+                        <code class="language-js">tilt()</code>
+                        function.</p>
+                    <pre>
+<code class="language-js">$('.js-tilt').tilt({
+    option: value,
+    option: value,
+});</code></pre>
+                </li>
+                <li>
+                    <p>
+                        All options are configurable trough data-attributes.
+                        <code class="language-html">data-tilt-&lt;option name&gt;=&quot;value&quot;</code>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </article>
+
+</main>
+<script src="./js/prism.js"></script>
+<script src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script src="./node_modules/tilt.js/src/tilt.jquery.js"></script>
+<script src="./dest/app.js"></script>
+</body>
+</html>

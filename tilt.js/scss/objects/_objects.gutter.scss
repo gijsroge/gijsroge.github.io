@@ -1,0 +1,38 @@
+/*
+ *  Object: Gutter
+ *  ---
+ *  Object to set gutters on grid items
+ */
+
+$gutters: (
+        null: $global-spacing-unit,
+        '-tiny': $global-spacing-unit-tiny,
+        '-small': $global-spacing-unit-small,
+        '-medium': $global-spacing-unit-medium,
+        '': $global-spacing-unit,
+        '-large': $global-spacing-unit-large,
+        '-huge': $global-spacing-unit-huge,
+        '-none': 0
+) !default;
+
+// Loop through the weights map and generate classes (e.g: u-bold).
+@each $gutter, $value in $gutters {
+  .o-gutter#{$gutter} {
+    margin-left: -$value;
+    margin-bottom: -$value;
+    > .o-gutter__item{
+      padding-left: $value;
+      padding-bottom: $value;
+    }
+  }
+}
+
+/**
+ * Gutter variation that only renders
+ */
+.o-gutter--edges-only{
+  margin-bottom: 0;
+  > .o-gutter__item{
+    padding-bottom: 0;
+  }
+}

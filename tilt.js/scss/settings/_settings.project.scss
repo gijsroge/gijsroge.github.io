@@ -1,0 +1,43 @@
+/*
+ *  Project Settings
+ *  ---
+ *  Tweak default variables from '_settings.default.scss' to suit your project needs
+ */
+
+/*
+ * Base typographical styles and baseline grid.
+ */
+$global-font-size: 18px;
+$global-line-height: 36px;
+
+/**
+ * Font family's
+ */
+$primary-font-family-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$primary-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$secondary-font-family-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$secondary-font-family: $primary-font-family;
+
+/**
+ * Font weights
+ */
+$light: 300;
+$normal: 400;
+$semi-bold: 600;
+$bold: 700;
+$extra-bold: 800;
+
+/**
+ * Font sizes
+ */
+$font-size-h1: 36px;
+$font-size-h2: 28px;
+$font-size-h3: 24px;
+$font-size-h4: 20px;
+$font-size-h5: 18px;
+$font-size-h6: 16px;
+$font-size-tiny: 12px;
+$font-size-small: 16px;
+$font-size-default: $global-font-size;
+$font-size-large: 22px;
+$font-size-huge: 28px;

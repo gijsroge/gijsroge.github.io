@@ -1,0 +1,24 @@
+/*
+ *  Object: Wrapper
+ *  ---
+ *  Class to wrap content
+ */
+
+.o-wrapper {
+  max-width: $wrapper-width;
+
+  @media (max-width: $wrapper-width + $global-spacing-unit-large) {
+    padding-left: $global-spacing-unit-large !important;
+    padding-right: $global-spacing-unit-large !important;
+    max-width: 100%;
+  }
+}
+
+
+/**
+ * Center wrapper
+ */
+.o-wrapper--center {
+  margin-left: auto;
+  margin-right: auto;
+}

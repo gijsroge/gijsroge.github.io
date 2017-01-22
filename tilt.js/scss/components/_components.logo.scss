@@ -1,0 +1,46 @@
+/*
+ *  Components: Buttons
+ *  ---
+ *  Collection of buttons
+ */
+
+.c-logo {
+  $size: 200px;
+  width: $size;
+  height: $size;
+  background-color: #7e56ff;
+  background-image: linear-gradient(150deg, #5a00ff 0%, #ff1ff7 100%, #ff1ff7 100%);
+  box-shadow: 0 20px 27px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  @include font-size(57px);
+  text-decoration: none;
+  font-weight: $light;
+  transform-style: preserve-3d;
+  transform: perspective(500px);
+  position: relative;
+
+  > span {
+    display: block;
+    transform: translateZ(150px) scale(.5);
+  }
+
+  &:hover{
+    .backdrop{
+      opacity: 1;
+      transform: translateZ(80px);
+    }
+  }
+  .backdrop {
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    position: absolute;
+    background-image: linear-gradient(150deg, #5a00ff 0%, #1fff73 100%, #1fff73 100%);
+    transform: translateZ(0px);
+    opacity: 0;
+    transition: 3s;
+  }
+}

@@ -1,0 +1,71 @@
+/*
+ *  Components: Example
+ *  ---
+ */
+
+.c-example {
+  padding-top: em($global-spacing-unit-large);
+  padding-bottom: em($global-spacing-unit-large);
+  border-top: 1px solid palette(color-neutral, light);
+  display: flex;
+  align-items: flex-start;
+
+  &:last-of-type {
+    border-bottom: 1px solid palette(color-neutral, light);
+  }
+}
+
+.c-example__demo {
+  flex: 0 1 15%;
+  min-width: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.c-example__info {
+  flex: 1 1 auto;
+  align-self: center;
+  margin-left: em($global-spacing-unit-large);
+}
+
+.c-example__tilt {
+  $size: 100%;
+  width: $size;
+  height: 150px;
+  display: block;
+  background-color: #9e21ff;
+  background-image: linear-gradient(135deg, #ed21ff 0%, #9e21ff 100%, #9e21ff 100%);
+  box-shadow: 0 3px 47px rgba(0, 0, 0, .2);
+}
+
+.c-example {
+  &:nth-child(2) {
+    .c-example__tilt {
+      background-image: linear-gradient(135deg, #ff008a 0%, #101c25 100%);
+    }
+  }
+  &:nth-child(3) {
+    .c-example__tilt {
+      background-image: linear-gradient(135deg, #ff00ba 0%, #fae713 100%);
+    }
+  }
+  &:nth-child(4) {
+    .c-example__tilt {
+      background-image: linear-gradient(135deg, #b118ac 0%, #26c7da 100%);
+    }
+  }
+}
+
+.c-example__output{
+  max-height: 200px;
+  overflow-y: auto;
+  margin:0;
+  padding: em($global-spacing-unit-small) em($global-spacing-unit);
+  background-color: #f8f8f8;
+  list-style: none;
+  
+  &:empty{
+    display: none;
+  }
+}

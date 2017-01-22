@@ -1,0 +1,16 @@
+/*
+ *  Link
+ *  ---
+ *  Default styles for links
+ *
+ *  1: Provide focus styles to make sure the visitor knows what is highlighted.
+ */
+
+a{
+  color: palette(color-accent);
+
+  &:focus,&:hover /*[1]*/{
+    background-color: palette(color-accent);
+    color: white;
+  }
+}

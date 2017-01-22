@@ -1,0 +1,22 @@
+/*
+ *  Font Family
+ *  ---
+ *  Offers re-usable classes to set your font-family.
+ */
+
+
+.u-font-primary {
+  font-family: $primary-font-family-fallback !important;
+}
+.u-font-secondary {
+  font-family: $secondary-font-family-fallback !important;
+}
+
+.wf-active {
+  .u-font-primary {
+    font-family: $primary-font-family !important;
+  }
+  .u-font-secondary {
+    font-family: $secondary-font-family !important;
+  }
+}
