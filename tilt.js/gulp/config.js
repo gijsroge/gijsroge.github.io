@@ -34,7 +34,7 @@ module.exports = {
      * Js Settings
      */
     js: {
-        glob: [path + 'js/**/*.js', path + 'src/**/*.js'],
+        glob: path + 'js/app.js',
         dest: path + 'dest/'
     },
 
