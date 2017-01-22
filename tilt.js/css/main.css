@@ -1068,8 +1068,8 @@ main {
             transform: translateZ(-50px); }
   .c-logo > span {
     display: block;
-    -webkit-transform: translateZ(50px) scale(0.8);
-            transform: translateZ(50px) scale(0.8); }
+    -webkit-transform: translateZ(50px) scale(0.7);
+            transform: translateZ(50px) scale(0.7); }
   .c-logo:hover:after {
     -webkit-transform: translateZ(-100px);
             transform: translateZ(-100px); }
