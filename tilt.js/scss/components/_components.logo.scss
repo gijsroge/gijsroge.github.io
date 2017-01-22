@@ -22,15 +22,27 @@
   transform: perspective(500px);
   position: relative;
 
-  > span {
-    display: block;
-    transform: translateZ(150px) scale(.5);
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $color-base;
+    box-shadow: 0 20px 70px -10px rgba($color-base, .7), 0 50px 100px 0 rgba($color-base, .2);
+    z-index: -1;
+    transform: translateZ(-50px);
   }
 
-  &:hover{
-    .backdrop{
-      opacity: 1;
-      transform: translateZ(80px);
+  > span {
+    display: block;
+    transform: translateZ(50px) scale(.8);
+  }
+
+  &:hover {
+    &:after{
+      transform: translateZ(-100px);
     }
   }
   .backdrop {

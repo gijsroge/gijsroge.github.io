@@ -1054,14 +1054,25 @@ main {
   -webkit-transform: perspective(500px);
           transform: perspective(500px);
   position: relative; }
+  .c-logo:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #333;
+    box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.7), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
+    z-index: -1;
+    -webkit-transform: translateZ(-50px);
+            transform: translateZ(-50px); }
   .c-logo > span {
     display: block;
-    -webkit-transform: translateZ(150px) scale(0.5);
-            transform: translateZ(150px) scale(0.5); }
-  .c-logo:hover .backdrop {
-    opacity: 1;
-    -webkit-transform: translateZ(80px);
-            transform: translateZ(80px); }
+    -webkit-transform: translateZ(50px) scale(0.8);
+            transform: translateZ(50px) scale(0.8); }
+  .c-logo:hover:after {
+    -webkit-transform: translateZ(-100px);
+            transform: translateZ(-100px); }
   .c-logo .backdrop {
     width: 70%;
     height: 70%;
