@@ -985,9 +985,21 @@ body, html {
   min-height: 100%; }
 
 aside {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 8em 5em 8em 8em; }
 
 main {
+  display: none;
   border-left: 1px solid #ededed;
   padding: 8em 0;
   padding-bottom: 0;

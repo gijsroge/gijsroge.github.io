@@ -7,9 +7,14 @@ body, html{
   min-height:100%;
 }
 aside{
+  flex-basis: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
   padding: em($global-spacing-unit-huge) em($global-spacing-unit-large) em($global-spacing-unit-huge) em($global-spacing-unit-huge);
 }
 main{
+  display: none;
   border-left: 1px solid palette(color-neutral, light);
   padding: em($global-spacing-unit-huge) 0;
   padding-bottom:0;
