@@ -3814,12 +3814,11 @@ tildify@^1.0.0:
   dependencies:
     os-homedir "^1.0.0"
 
-tilt.js@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/tilt.js/-/tilt.js-1.1.1.tgz#c5926a3424f60b5de0ebdf0d48e741d43338f649"
+tilt.js@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/tilt.js/-/tilt.js-1.1.5.tgz#44537217be21578d899ae59f183c8848b9707841"
   dependencies:
-    babel-preset-env "^1.1.8"
-    gulp-babel "^6.1.2"
+    jquery "^3.1.1"
 
 time-stamp@^1.0.0:
   version "1.0.1"

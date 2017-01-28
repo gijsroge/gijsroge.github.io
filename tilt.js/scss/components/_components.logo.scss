@@ -33,6 +33,7 @@
     box-shadow: 0 20px 70px -10px rgba($color-base, .7), 0 50px 100px 0 rgba($color-base, .2);
     z-index: -1;
     transform: translateZ(-50px);
+    transition: .3s;
   }
 
   > span {
@@ -41,8 +42,9 @@
   }
 
   &:hover {
-    &:after{
+    &:after {
       transform: translateZ(-100px);
+      opacity: 1;
     }
   }
   .backdrop {

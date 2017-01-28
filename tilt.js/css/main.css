@@ -1065,14 +1065,17 @@ main {
     box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.7), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
     z-index: -1;
     -webkit-transform: translateZ(-50px);
-            transform: translateZ(-50px); }
+            transform: translateZ(-50px);
+    -webkit-transition: .3s;
+    transition: .3s; }
   .c-logo > span {
     display: block;
     -webkit-transform: translateZ(50px) scale(0.7);
             transform: translateZ(50px) scale(0.7); }
   .c-logo:hover:after {
     -webkit-transform: translateZ(-100px);
-            transform: translateZ(-100px); }
+            transform: translateZ(-100px);
+    opacity: 1; }
   .c-logo .backdrop {
     width: 70%;
     height: 70%;
@@ -1132,7 +1135,22 @@ main {
   background-color: #9e21ff;
   background-image: -webkit-linear-gradient(315deg, #ed21ff 0%, #9e21ff 100%, #9e21ff 100%);
   background-image: linear-gradient(135deg, #ed21ff 0%, #9e21ff 100%, #9e21ff 100%);
-  box-shadow: 0 3px 47px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 3px 47px rgba(0, 0, 0, 0.2);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: perspective(300px);
+          transform: perspective(300px); }
+
+.c-example__tilt-inner {
+  -webkit-transform: translateZ(50px) translateY(-50%) translateX(-50%);
+          transform: translateZ(50px) translateY(-50%) translateX(-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  box-shadow: 0 0 50px 0 rgba(51, 51, 51, 0.3); }
 
 .c-example:nth-child(2) .c-example__tilt {
   background-image: -webkit-linear-gradient(315deg, #ff008a 0%, #101c25 100%);
