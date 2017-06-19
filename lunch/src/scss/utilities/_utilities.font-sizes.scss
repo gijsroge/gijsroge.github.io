@@ -1,0 +1,37 @@
+/*
+ *  Utilities: Font sizes
+ *  ---
+ *  A set of font sizing helper classes
+ */
+
+.u-font-tiny{
+  @include font-size($font-size-tiny);
+}
+
+.u-font-x-small{
+  @include font-size($font-size-x-small, 1.3);
+}
+
+.u-font-small{
+  @include font-size($font-size-small, 1.5);
+}
+
+.u-font-default{
+  @include font-size($font-size-default);
+}
+
+.u-font-medium{
+  @include font-size($font-size-medium, 1.5);
+}
+
+.u-font-between{
+  @include font-size($font-size-between);
+}
+
+.u-font-large{
+  @include font-size($font-size-large);
+}
+
+.u-font-huge{
+  @include font-size($font-size-huge);
+}

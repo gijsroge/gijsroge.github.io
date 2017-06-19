@@ -1,0 +1,60 @@
+/*
+ *  Utilities: Helpers
+ *  ---
+ *  Helper classes for abstracting general common used styles
+ */
+
+.u-fullwidth {
+  width: 100% !important;
+}
+
+.u-fullheight {
+  height: 100% !important;
+}
+
+.u-stretch-height {
+  min-height: 100% !important;
+}
+
+.u-no-underline {
+  text-decoration: none !important;
+}
+
+.u-line-through{
+  text-decoration: line-through !important;
+}
+
+.js-hide {
+  display: none;
+}
+
+.u-align-middle {
+  vertical-align: middle !important;
+}
+
+.u-align-top{
+  vertical-align: top !important;
+}
+
+.u-reset-link{
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.u-text-underline{
+  text-decoration: underline !important;
+}
+
+.u-hide-if-empty{
+  &:empty{
+    display: none !important;
+  }
+}
+
+.u-no-wrap{
+  white-space: nowrap;
+}
+
+.u-flex--no-grow{
+  flex: 1;
+}

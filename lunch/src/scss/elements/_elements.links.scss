@@ -1,0 +1,13 @@
+/*
+ *  Links
+ *  ---
+ *  Default styles for links
+ */
+
+a{
+  color: palette(color-base);
+
+  &:hover,&:focus{
+    color: palette(color-base, medium-light);
+  }
+}

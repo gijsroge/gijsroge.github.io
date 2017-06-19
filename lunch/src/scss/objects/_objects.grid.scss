@@ -1,0 +1,53 @@
+/*
+ *  Object: Grid
+ *  ---
+ *  Simple re-usable flexbox grids
+ */
+
+.o-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.o-grid > * {
+  flex: 0 0 (100%/4);
+
+  @include mappy-bp(max-width desktop-wide) {
+    flex: 0 0 (100%/3);
+  }
+
+  @include mappy-bp(max-width tablet-landscape) {
+    flex: 0 0 (100%/2);
+  }
+
+  @include mappy-bp(max-width smartphone-landscape) {
+    flex: 1 1 100%;
+  }
+}
+
+.o-grid--third {
+  > *{
+    flex: 0 0 (100%/3);
+
+    @include mappy-bp(max-width smartphone-landscape) {
+      flex: 1 1 100%;
+    }
+  }
+}
+
+.o-grid--half {
+  > *{
+    flex: 0 0 (100%/2);
+
+    @include mappy-bp(max-width smartphone-landscape) {
+      flex: 1 1 100%
+    }
+  }
+}
+
+.o-grid--fluid{
+  > *{
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+}

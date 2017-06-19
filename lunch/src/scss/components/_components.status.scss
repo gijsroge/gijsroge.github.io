@@ -1,0 +1,136 @@
+/*
+ *  Icon animations
+ *  ---
+ */
+
+.c-status {
+  $size: 70vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $size;
+  height: $size;
+  margin-top: -$size/2;
+  margin-left:-$size/2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: $light;
+  transition: color .25s;
+
+  &.is-highlighted {
+
+  }
+}
+
+.c-status-title {
+  position: relative;
+  z-index: z-index('beta');
+  font-weight: inherit;
+  margin: 0;
+  text-align: center;
+  @include font-size(65px, 1.5);
+  color: white;
+  pointer-events: none;
+
+
+  svg{
+    fill: white;
+    width: 45px;
+    height: 45px;
+    margin-top: em($global-spacing-unit-tiny);
+  }
+
+  > *{
+    display: block;
+    width:100%;
+  }
+
+  .inner{
+    color: #e7036e;
+    font-weight: $bold;
+  }
+}
+
+.c-status-message {
+  @include font-size(60px);
+  font-weight: $thin;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40vh;
+  margin-left: -20vh;
+  text-align: center;
+  z-index: z-index('gamma');
+  opacity: 0;
+  line-height: 1.4;
+
+  span{
+    background-color: rgba(black, .3);
+    color: #fff;
+    display: inline;
+    padding: 0.45rem;
+
+    /* Needs prefixing */
+    -webkit-box-decoration-break: clone;
+  }
+}
+
+.c-status-message--error{
+  .subtitle{
+    @include font-size(40px);
+  }
+}
+
+.c-status-message-inner {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.c-status-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  > * {
+    position: absolute;
+    border-radius: 50%;
+  }
+}
+
+$status-circle-stroke: 10px;
+.c-status-circle-border {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: $color-base;
+  will-change: transform;
+}
+
+.c-status-circle-bg {
+  top: $status-circle-stroke/2;
+  left: $status-circle-stroke/2;
+  width: calc(100% - #{$status-circle-stroke});
+  height: calc(100% - #{$status-circle-stroke});
+  background-color: $color-base;
+  will-change: transform;
+}
+
+.c-status-circle-gif{
+  background-size:cover;
+  top: $status-circle-stroke/2;
+  left: $status-circle-stroke/2;
+  width: calc(100% - #{$status-circle-stroke});
+  height: calc(100% - #{$status-circle-stroke});
+  will-change: transform;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+}

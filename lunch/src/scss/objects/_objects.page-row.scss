@@ -1,0 +1,60 @@
+/*
+ *  Object: Page row
+ *  ---
+ *  General page row block
+ */
+
+$page-row-size: double($global-spacing-unit-large);
+
+.o-page-row-margin {
+  margin-bottom: em($page-row-size);
+
+  @include mappy-bp(max-width tablet-landscape) {
+    margin-bottom: em($global-spacing-unit-medium);
+  }
+
+  &--medium {
+    margin-bottom: em($global-spacing-unit-medium);
+
+    @include mappy-bp(max-width tablet-landscape) {
+      margin-bottom: em($global-spacing-unit);
+    }
+  }
+
+  &--small {
+    margin-bottom: em($global-spacing-unit);
+    @include mappy-bp(max-width smartphone) {
+      margin-bottom: em($global-spacing-unit-small);
+    }
+  }
+
+  &--tablet{
+    @include mappy-bp(max-width tablet-landscape) {
+      margin-bottom: em($global-spacing-unit);
+    }
+  }
+
+  &--mobile{
+    @include mappy-bp(max-width smartphone-landscape) {
+      margin-bottom: em($global-spacing-unit);
+    }
+  }
+}
+
+.o-page-row-bottom {
+  margin-bottom: em($page-row-size);
+
+  @include mappy-bp(max-width tablet-landscape) {
+    margin-bottom: em($global-spacing-unit-medium);
+  }
+}
+
+.o-page-row-padding {
+  padding-top: em($page-row-size);
+  padding-bottom: em($page-row-size);
+
+  @include mappy-bp(max-width tablet-landscape) {
+    padding-top: em($global-spacing-unit-medium);
+    padding-bottom: em($global-spacing-unit-medium);
+  }
+}

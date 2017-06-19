@@ -1,0 +1,10 @@
+/*
+ *  Generic: Selection
+ *  ---
+ *  Theme text selection colors
+ */
+
+::selection {
+  background-color: palette(color-base);
+  color: $color-base;
+}

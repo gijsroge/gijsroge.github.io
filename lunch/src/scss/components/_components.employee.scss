@@ -1,0 +1,67 @@
+/*
+ *  Icon animations
+ *  ---
+ */
+
+.c-employee-avatar{
+  position: absolute;
+  z-index: z-index('beta');
+  top: 5vh;
+  right: 5vh;
+
+  border-radius: 50%;
+  object-fit: cover;
+  transform: scale(0);
+  opacity:0;
+  overflow: hidden;
+  background-color: rgba(white, .3);
+  
+  img{
+    width: 10vh;
+    height: 10vh;
+    object-fit: cover;
+  }
+}
+
+.c-employee-name{
+  font-size: 10vw;
+  font-weight: $bold;
+  color: white;
+}
+
+.c-employee-list{
+  position: fixed;
+  bottom: 5vh;
+  left: 5vh;
+  list-style: none;
+  margin:0;
+  color: white;
+  background-color: $color-base;
+  box-shadow: 0 0 em(120px) 120px rgba($color-base, 1);
+  border-radius: 50%;
+  padding: em($global-spacing-unit);
+  min-width: em(200px);
+
+  @include font-size(24px);
+  color: rgba(white, .5);
+  transition: .3s;
+  
+  &:empty{
+    opacity:0;
+    visibility: hidden;
+    transform: scale(.75);
+  }
+
+  li{
+    display: flex;
+    align-items: center;
+    svg{
+      margin-right: em($global-spacing-unit-small);
+      fill: $color-success;
+    }
+    opacity:0;
+    &:not(:last-child){
+      margin-bottom: em(10px);
+    }
+  }
+}

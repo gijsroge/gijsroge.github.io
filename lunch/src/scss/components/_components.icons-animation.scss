@@ -1,0 +1,21 @@
+/*
+ *  Icon animations
+ *  ---
+ */
+
+.c-icons-animation{
+  overflow: hidden;
+  width:100%;
+  height:100%;
+  position: absolute;
+}
+.c-icons-animation__icon{
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+  img{
+    opacity: .25;
+    will-change: transform;
+  }
+}

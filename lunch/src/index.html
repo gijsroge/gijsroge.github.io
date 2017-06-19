@@ -1,0 +1,65 @@
+<html>
+<head>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://use.typekit.net/lyp4bjx.js"></script>
+    <script>try {
+            Typekit.load({async: true});
+        } catch (e) {
+        }</script>
+</head>
+<body>
+
+<div class="[ c-icons-animation ] js-icon-path-animation">
+    <svg class="js-icon-path u-opacity-0" width="100%" height="100%" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <rect fill="none" stroke="white" stroke-width="1px" x="0" y="0" rx="500" ry="500" width="100%" height="100%"/>
+    </svg>
+    <span class="[ c-icons-animation__icon ] js-icon-path-element"><img width="190" src="images/bladje.png" alt=""></span>
+    <span class="[ c-icons-animation__icon ] js-icon-path-element"><img width="175" src="images/champignon.png" alt=""></span>
+    <span class="[ c-icons-animation__icon ] js-icon-path-element"><img width="400" src="images/rol.png" alt=""></span>
+    <span class="[ c-icons-animation__icon ] js-icon-path-element"><img width="200" src="images/doorgesneden%20tomaat.png" alt=""></span>
+    <span class="[ c-icons-animation__icon ] js-icon-path-element"><img width="250" src="images/peper.png" alt=""></span>
+    <span class="[ c-icons-animation__icon ] js-icon-path-element"><img width="450" src="images/schep.png" alt=""></span>
+    <span class="[ c-icons-animation__icon ] js-icon-path-element"><img width="190" src="images/spaghetti.png" alt=""></span>
+    <span class="[ c-icons-animation__icon ] js-icon-path-element"><img width="190" src="images/swirrl.png" alt=""></span>
+    <span class="[ c-icons-animation__icon ] js-icon-path-element"><img width="190" src="images/tomaat.png" alt=""></span>
+    <span class="[ c-icons-animation__icon ] js-icon-path-element"><img width="190" src="images/spaghetti.png" alt=""></span>
+    <span class="[ c-icons-animation__icon ] js-icon-path-element"><img width="250" src="images/peper.png" alt=""></span>
+</div>
+
+<div class="[ c-status ] js-status-wrapper">
+    <h2 class="[ c-status-title ] js-status-title">
+        <span>Scan your badge </span><span class="inner">to eat!</span> <span>{% include 'svg/mmh.svg' %}</span>
+    </h2>
+    <span class="[ c-status-message ] js-status-success-message"><span>Enjoy your meal!</span></span>
+    <span class="[ c-status-message c-status-message--error ] js-status-error-message"><strong class="u-block u-margin-bottom">Card was not recognized.</strong><span class="subtitle">Try again or contact HR.</span></span>
+    <div class="[ c-status-circle ] js-status-circle">
+        <span class="[ c-status-circle-border ] js-status-circle-border"></span>
+        <span class="[ c-status-circle-bg ] js-status-circle-bg"></span>
+        <span class="[ c-status-circle-gif ] js-random-giphy"></span>
+    </div>
+</div>
+
+<div class="c-badge-indication">
+    <div class="c-badge-indication__ripples">
+        <div class="c-ripples js-ripples">
+            <div class="c-ripples__item"></div>
+            <div class="c-ripples__item"></div>
+            <div class="c-ripples__item"></div>
+            <div class="c-ripples__item"></div>
+            <div class="c-ripples__item"></div>
+        </div>
+        <span class="u-pos-relative u-index-alpha">{% include 'svg/card.svg' %}</span>
+    </div>
+    <div class="js-badge-indication-arrow">{% include 'svg/arrow-indication.svg' %}</div>
+</div>
+
+<div class="c-enter-indication">
+    Press enter to simulate scanning a badge. <br>
+    <span>(press any other key to simulate error)</span>
+</div>
+
+<ul class="[ c-employee-list ] js-employee-list"></ul>
+
+<script src="js/main.js"></script>
+</body>
+</html>

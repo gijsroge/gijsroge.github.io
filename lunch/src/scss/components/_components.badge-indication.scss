@@ -1,0 +1,22 @@
+/*
+ *  Badge indication animation/icon
+ *  ---
+ */
+
+.c-badge-indication{
+  position: absolute;
+  z-index: z-index('beta');
+  bottom: 5vh;
+  right: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-base;
+  box-shadow: 0 0 em(120px) 120px rgba($color-base, 1);
+  padding: em($global-spacing-unit);
+}
+
+.c-badge-indication__ripples{
+  position: relative;
+  margin-right: em($global-spacing-unit-medium);
+}

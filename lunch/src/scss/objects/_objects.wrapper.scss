@@ -1,0 +1,33 @@
+/*
+ *  Object: Wrapper
+ *  ---
+ *  Class to wrap content
+ */
+
+.o-wrapper {
+  max-width: $wrapper-width;
+
+  @media (max-width: $wrapper-width + $global-spacing-unit-large) {
+    padding-left: $global-spacing-unit-large !important;
+    padding-right: $global-spacing-unit-large !important;
+    max-width: 100%;
+  }
+
+  @include mappy-bp(max-width tablet){
+    padding-left: em($global-spacing-unit) !important;
+    padding-right: em($global-spacing-unit) !important;
+  }
+}
+
+.o-wrapper--small{
+  max-width: 1200px;
+}
+
+
+/**
+ * Center wrapper
+ */
+.o-wrapper--center {
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,98 @@
+/**
+ * Breakpoints
+ */
+@import "vendor/node_modules/mappy-breakpoints/mappy-breakpoints";
+/*
+ * Settings
+ * used with preprocessors and contain font, colors definitions, etc.
+ */
+@import "node_modules/itr-base-theme-css/settings/settings.defaults";
+@import "node_modules/itr-base-theme-css/settings/settings.core";
+@import "settings/settings.colors";
+@import "settings/settings.easings";
+@import "settings/settings.project";
+/*
+ * Tools
+ * Globally used mixins and functions. It’s important not to output any
+ * CSS in the first 2 layers.
+ */
+@import "node_modules/itr-base-theme-css/tools/tools.mixin";
+@import "node_modules/itr-base-theme-css/tools/tools.functions";
+@import "node_modules/itr-base-theme-css/tools/tools.debug";
+/*
+ * Generic
+ * Reset and/or normalize styles, box-sizing definition, etc. This is the
+ * first layer which generates actual CSS.
+ */
+@import "node_modules/itr-base-theme-css/generic/generic.box-sizing";
+@import "node_modules/itr-base-theme-css/generic/generic.normalize";
+@import "node_modules/itr-base-theme-css/generic/generic.reset";
+@import "node_modules/itr-base-theme-css/generic/generic.shared";
+@import "generic/generic.selection";
+/*
+ * Elements
+ * Styling for bare HTML elements (like H1, A, etc.). These come with default
+ * styling from the browser so we can redefine them here.
+ */
+@import "elements/elements.page";
+@import "elements/elements.body";
+@import "elements/elements.headings";
+@import "elements/elements.paragraphs";
+@import "elements/elements.images";
+@import "elements/elements.forms";
+@import "elements/elements.links";
+@import "elements/elements.typography";
+@import "elements/elements.select";
+/*
+ * Vendor
+ * Third party libs
+ */
+
+/*
+ * Objects
+ * Class-based selectors which define undecorated design patterns, for example
+ * media object known from OOCSS
+ */
+@import "objects/objects.wrapper";
+@import "objects/objects.gutter";
+@import "node_modules/itr-base-theme-css/objects/objects.list";
+@import "node_modules/itr-base-theme-css/objects/objects.list-inline";
+@import "objects/objects.grid";
+@import "objects/objects.page-row";
+/*
+ * Components
+ * Specific UI components. This is where majority of our work takes place and
+ * our UI components are often composed of Objects and Components
+ */
+@import "components/components.icons-animation";
+@import "components/components.status";
+@import "components/components.logo";
+@import "components/components.employee";
+@import "components/components.badge-indication";
+@import "components/components.ripples";
+/*
+ * Utilities
+ * Utilities and helper classes with ability to override anything which goes
+ * before in the triangle, eg. hide helper class
+ */
+@import "node_modules/itr-base-theme-css/utilities/utilities.align";
+@import "node_modules/itr-base-theme-css/utilities/utilities.display";
+@import "node_modules/itr-base-theme-css/utilities/utilities.hide";
+@import "utilities/utilities.font-sizes";
+@import "node_modules/itr-base-theme-css/utilities/utilities.print";
+@import "node_modules/itr-base-theme-css/utilities/utilities.helpers.flexbox";
+@import "node_modules/itr-base-theme-css/utilities/utilities.colors";
+@import "node_modules/itr-base-theme-css/utilities/utilities.spacing";
+@import "utilities/utilities.headings";
+@import "node_modules/itr-base-theme-css/utilities/utilities.clearfix";
+@import "node_modules/itr-base-theme-css/utilities/utilities.weights";
+@import "node_modules/itr-base-theme-css/utilities/utilities.z-index";
+@import "node_modules/itr-base-theme-css/utilities/utilities.underline";
+@import "node_modules/itr-base-theme-css/utilities/utilities.position";
+@import "node_modules/itr-base-theme-css/utilities/utilities.text";
+@import "node_modules/itr-base-theme-css/utilities/utilities.icon-colors";
+@import "node_modules/itr-base-theme-css/utilities/utilities.overflow";
+@import "node_modules/itr-base-theme-css/utilities/utilities.font-family";
+@import "node_modules/itr-base-theme-css/utilities/utilities.opacity";
+@import "node_modules/itr-base-theme-css/utilities/utilities.responsive";
+@import "utilities/utilities.helpers";

@@ -1,0 +1,50 @@
+/*
+ *  Elements: Headings
+ *  ---
+ *  We have all of our heading font sizes defined here. Passing these pixel
+ *  values into our `font-size()` mixin will generate a rem-based
+ *  `font-size` with a pixel fallback, as well as generating a `line-height` that
+ *  will sit on our baseline grid.
+ */
+
+.wf-active{
+  h1,h2,h3,h4,h5,h6{
+    font-family: $secondary-font-family;
+  }
+}
+
+h1 {
+  @include font-size($font-size-h1, 1.25);
+  @include mappy-bp(max-width smartphone-landscape) {
+    @include font-size($font-size-h1 - 10px, 1.5);
+  }
+}
+
+h2 {
+  @include font-size($font-size-h2, 1.5);
+  @include mappy-bp(max-width smartphone-landscape) {
+    @include font-size($font-size-h2 - 10px, 1.5);
+  }
+}
+
+h3 {
+  @include font-size($font-size-h3, 1.5);
+  @include mappy-bp(max-width smartphone-landscape) {
+    @include font-size($font-size-h3 - 4px, 1.5);
+  }
+}
+
+h4 {
+  @include font-size($font-size-h4, 1.5);
+  @include mappy-bp(max-width smartphone-landscape) {
+    @include font-size($font-size-default, 1.5);
+  }
+}
+
+h5 {
+  @include font-size($font-size-h5, 1.5);
+}
+
+h6 {
+  @include font-size($font-size-h6, 1.5);
+}

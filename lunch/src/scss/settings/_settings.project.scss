@@ -1,0 +1,95 @@
+/*
+ *  Project Settings
+ *  ---
+ *  Tweak default variables from '_settings.default.scss' to suit your project needs
+ */
+
+/*
+ * Base typographical styles and baseline grid. You need to define these values
+ * in pixels: inuitcss will convert them to more appropriate units.
+ */
+$global-font-size: 18px;
+$global-line-height: 30px;
+
+/**
+ * Wrapper
+ */
+$wrapper-width: 1580px;
+$wrapper-gutter: $global-spacing-unit;
+
+/**
+ * Font family's
+ */
+$primary-font-family-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$primary-font-family: "proxima-nova";
+$secondary-font-family-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$secondary-font-family: "proxima-nova";
+
+/**
+ * Font sizes
+ */
+$font-size-h1: 36px;
+$font-size-h2: 30px;
+$font-size-h3: 26px;
+$font-size-h4: 22px;
+$font-size-h5: 18px;
+$font-size-h6: 16px;
+$font-size-tiny: 12px;
+$font-size-x-small: 14px;
+$font-size-small: 16px;
+$font-size-default: $global-font-size;
+$font-size-medium: 22px;
+$font-size-between: 26px;
+$font-size-large: 30px;
+$font-size-huge: 60px;
+
+/**
+ * Paragraph
+ */
+$paragraph-width: 700px;
+
+/**
+ * Font weights
+ */
+$thin: 200;
+$light: 300;
+$normal: 400;
+$semi-bold: 600;
+$bold: 700;
+$extra-bold: 800;
+
+/**
+ * Weights
+ */
+$weights: (
+        thin: $thin,
+        light : $light,
+        normal : $normal,
+        semi-bold : $semi-bold,
+        bold : $bold,
+        extra-bold : $extra-bold
+);
+
+/**
+ * Disable gutter, we handle this ourself trough _objects.gutter.scss
+ */
+$grid-gutter-width-base: 0;
+
+/**
+ * Breakpoints
+ */
+$breakpoints: (
+        smartphone: 420px,
+        smartphone-landscape: 768px,
+        tablet: 768px,
+        tablet-landscape: 1024px,
+        desktop: 1200px,
+        small-screens: 1450px, // klant viewport lol
+        desktop-wide: 1500px
+);
+
+// You can use and valid arguments inserted into mappy-bp as the map values. Any of the following would do
+$mappy-queries: (
+        small-screens: mappy-bp(smartphone-landscape small-screens),
+        small-height-screens: mappy-bp(h max-height 900px),
+)
