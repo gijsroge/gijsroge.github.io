@@ -1,0 +1,53 @@
+/* Root typography */
+
+/*
+* http://css-tricks.com/rems-ems/
+* Root document is the default 100% (can be scaled trough media queries)
+* Components are declared with rems
+* Components elements are declared with ems
+*/
+
+body {
+  font-weight: $normal;
+  color: $base;
+  font-size: $base-font-size;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  font-size: 100%;
+}
+
+/* 
+* Headings 
+*/
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    line-height: 1;
+    margin-top: 0;
+    text-rendering: optimizeLegibility;
+    color: #070606
+}
+
+/*
+* Paragraph
+*/
+p{
+  &:first-child{
+    margin-top: 0;
+  }
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+
+/*
+* Content styles
+*/
+.content{
+  p,ul,blockquote,ol{
+    line-height: $base-line-height;
+  }
+}

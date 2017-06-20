@@ -1,0 +1,63 @@
+/* Import abstractions (mixins, reusable classes) & variables */
+@import "init";
+
+.top-link {
+    display: inline-block;
+    padding: 30px 40px;
+    font-size: 14px
+}
+body, html {
+    height: 100%;
+}
+.landing {
+    position: relative;
+    background-color: #a523bc;
+    background-image: -webkit-linear-gradient(15deg, #e7bf21 0, #f8d033 100%);
+    background-image: linear-gradient(75deg, #e7bf21 0, #f8d033 100%);
+    min-height: 100%;
+    overflow: hidden;
+    padding-bottom: 100px
+}
+.tabs {
+    visibility: hidden;
+    opacity: 0
+}
+header {
+    margin-bottom: 80px
+}
+.logo {
+    font-size: 67px;
+    color: #fff
+}
+.button--big, .package-managers, .tagline {
+    margin: 10px 0
+}
+.package-managers {
+    color: rgba(7, 6, 6, .4)
+}
+.tagline {
+    font-size: 18px
+}
+.examples-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    color: #000;
+    width: 100%
+}
+.examples-indicator svg {
+    margin-left: 5px;
+    position: relative;
+    bottom: -10px
+}
+.button--big {
+    display: inline-block;
+    padding: 20px 70px;
+    background-color: #fff;
+    background-image: -webkit-linear-gradient(bottom, transparent 0, rgba(255, 255, 255, 0) 100%);
+    background-image: linear-gradient(to top, transparent 0, rgba(255, 255, 255, 0) 100%);
+    border-radius: 32px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, .29);
+    text-decoration: none
+}

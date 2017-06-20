@@ -1,0 +1,8 @@
+.wrapper {
+  max-width: $wrapper;
+  margin: 0 auto;
+  @media(max-width: $wrapper + 40px){
+  	padding-left: em(25px);
+  	padding-right: em(25px);
+  }
+}

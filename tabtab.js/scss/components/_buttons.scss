@@ -1,0 +1,10 @@
+.button--big {
+    transition: .1s all cubic-bezier(.215, .61, .355, 1)
+}
+.button--big:hover {
+    transform: scale(1.015);
+    box-shadow: 0 4px 3px rgba(0, 0, 0, .1)
+}
+.button--big:active {
+    transform: scale(.985)
+}

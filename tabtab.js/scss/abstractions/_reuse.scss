@@ -1,0 +1,82 @@
+.relative {
+    position: relative
+}
+.absolute {
+    position: absolute
+}
+svg {
+    fill: currentColor
+}
+.stretch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%
+}
+.inline-block {
+    display: inline-block
+}
+.display-block {
+    display: block
+}
+.inline {
+    display: inline
+}
+.t {
+    display: table;
+    width: 100%
+}
+.t-c {
+    vertical-align: middle;
+    display: table-cell
+}
+.a-l {
+    text-align: left
+}
+.a-r {
+    text-align: right
+}
+.a-c {
+    text-align: center
+}
+.v-a-m {
+    vertical-align: middle
+}
+.v-a-t {
+    vertical-align: top!important
+}
+.light {
+    font-weight: 300
+}
+.regular {
+    font-weight: 400
+}
+.bold {
+    font-weight: 700
+}
+.normal {
+    font-style: normal
+}
+.italic {
+    font-style: italic
+}
+.button {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer
+}
+.uppercase {
+    text-transform: uppercase
+}
+.f-n {
+    font-size: 17px
+}
+.f-l {
+    font-size: 18px
+}
+.f-s {
+    font-size: 12px
+}

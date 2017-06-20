@@ -1,0 +1,19 @@
+.grid{
+  font-size: 0;
+  [class*="col-"]{
+    font-size: $base-font-size;
+    display: inline-block;
+  }
+}
+
+
+/*
+* Create cols
+*/
+
+$cols: 10;
+@for $i from 1 through $cols {
+    .col-#{$i} {
+        width: $i * 100%/$cols;
+    }
+}

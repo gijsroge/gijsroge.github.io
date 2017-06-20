@@ -1,0 +1,36 @@
+# Node
+npm/node_modules
+*.log
+
+# Bower
+/bower_components
+
+# Sass
+*.sass-cache
+
+# Folders
+/tmp
+
+# Compiled files
+css/main.css
+js/plugins.js
+images/dist
+dist/
+
+# sourceMap files
+*.css
+*.map
+
+# Demo file
+index.html
+
+# Ignore IDE settings
+/.idea
+
+# photoshop files
+*.psd
+
+# ssh login
+npm/secret.json
+
+*.zip
