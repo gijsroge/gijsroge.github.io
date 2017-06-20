@@ -693,7 +693,7 @@ html {
   /* [1] */
   min-height: 100%;
   /* [3] */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Open Sans";
   color: #1b1b1b;
   -webkit-font-smoothing: antialiased;
   letter-spacing: -1.15px;
@@ -704,18 +704,6 @@ html {
   /**
    * Disable scroll
    */ }
-  html.no-js {
-    letter-spacing: initial;
-    /* [4] */
-    word-spacing: initial;
-    /* [4] */ }
-  html.wf-active {
-    font-family: "proxima-nova";
-    /* [4] */
-    letter-spacing: initial;
-    /* [4] */
-    word-spacing: initial;
-    /* [4] */ }
   @media all and (min-width: 48em) and (max-width: 90.5625em) {
     html {
       font-size: 0.94444rem;
@@ -749,7 +737,7 @@ body {
  *  will sit on our baseline grid.
  */
 .wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active h5, .wf-active h6 {
-  font-family: "proxima-nova"; }
+  font-family: "Open Sans"; }
 
 h1 {
   font-size: 2rem;
@@ -3212,10 +3200,10 @@ select {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important; }
 
 .wf-active .u-font-primary {
-  font-family: "proxima-nova" !important; }
+  font-family: "Open Sans" !important; }
 
 .wf-active .u-font-secondary {
-  font-family: "proxima-nova" !important; }
+  font-family: "Open Sans" !important; }
 
 /*
  *  Utilities: Opacity

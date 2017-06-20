@@ -19,24 +19,13 @@ html {
   font-size: ($global-font-size / 16px) * 1em; /* [1] */
   line-height: $global-line-height / $global-font-size; /* [1] */
   min-height: 100%; /* [3] */
-  font-family: $primary-font-family-fallback;
+  font-family: $primary-font-family;
   color: palette(color-base, base);
   -webkit-font-smoothing: antialiased;
 
   letter-spacing: -1.15px; /* [4] */
   word-spacing: 0; /* [4] */
   font-weight: $light;
-
-  &.no-js{
-    letter-spacing: initial; /* [4] */
-    word-spacing: initial; /* [4] */
-  }
-
-  &.wf-active{
-    font-family: $primary-font-family; /* [4] */
-    letter-spacing: initial; /* [4] */
-    word-spacing: initial; /* [4] */
-  }
 
   @include mappy-query(small-screens) {
     @include font-size(17px, 1.5);
