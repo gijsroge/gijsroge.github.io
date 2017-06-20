@@ -548,7 +548,7 @@ var app = function () {
             var user = {
                 first_name: 'Gijs',
                 last_name: 'Rogé',
-                photo: 'http://gijsroge.github.io/gijs.jpg'
+                photo: 'https://gijsroge.github.io/gijs.jpg'
             };
 
             // Create avatar
@@ -572,7 +572,6 @@ var app = function () {
         value: function error() {
             // Show error animation
             (0, _error3.default)();
-            console.warn(err);
 
             // Clean employee ID
             this.cleanID();

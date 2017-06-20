@@ -30,7 +30,7 @@ class app {
         const user = {
             first_name: 'Gijs',
             last_name: 'Rogé',
-            photo: 'http://gijsroge.github.io/gijs.jpg',
+            photo: 'https://gijsroge.github.io/gijs.jpg',
         };
 
         // Create avatar
@@ -54,7 +54,6 @@ class app {
     error() {
         // Show error animation
         error();
-        console.warn(err);
 
         // Clean employee ID
         this.cleanID();
