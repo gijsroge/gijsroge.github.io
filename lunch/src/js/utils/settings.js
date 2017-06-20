@@ -2,12 +2,12 @@ const settings = {
     gif: {
         element: '.js-random-giphy',
         api: [
-            'http://api.giphy.com/v1/gifs/search?q=eating&limit=25&rating=PG-13&api_key=dc6zaTOxFJmzC',
-            'http://api.giphy.com/v1/gifs/search?q=cheeseburger&limit=100&rating=PG-13&api_key=dc6zaTOxFJmzC',
-            'http://api.giphy.com/v1/gifs/search?q=hot-dog&limit=100&rating=PG-13&api_key=dc6zaTOxFJmzC',
-            'http://api.giphy.com/v1/gifs/search?q=bacon&limit=100&rating=PG-13&api_key=dc6zaTOxFJmzC',
-            'http://api.giphy.com/v1/gifs/search?q=pizza&limit=100&rating=PG-13&api_key=dc6zaTOxFJmzC',
-            'http://api.giphy.com/v1/gifs/search?q=taco&limit=100&rating=PG-13&api_key=dc6zaTOxFJmzC',
+            'https://api.giphy.com/v1/gifs/search?q=eating&limit=25&rating=PG-13&api_key=dc6zaTOxFJmzC',
+            'https://api.giphy.com/v1/gifs/search?q=cheeseburger&limit=100&rating=PG-13&api_key=dc6zaTOxFJmzC',
+            'https://api.giphy.com/v1/gifs/search?q=hot-dog&limit=100&rating=PG-13&api_key=dc6zaTOxFJmzC',
+            'https://api.giphy.com/v1/gifs/search?q=bacon&limit=100&rating=PG-13&api_key=dc6zaTOxFJmzC',
+            'https://api.giphy.com/v1/gifs/search?q=pizza&limit=100&rating=PG-13&api_key=dc6zaTOxFJmzC',
+            'https://api.giphy.com/v1/gifs/search?q=taco&limit=100&rating=PG-13&api_key=dc6zaTOxFJmzC',
         ],
     },
     animations: {
