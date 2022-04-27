@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "autoprefixer": "^6.0.3",
-    "grunt": "0.4.5",
+    "grunt": "1.5.2",
     "grunt-cssnano": "2.0.1",
     "grunt-postcss": "0.6.0",
     "grunt-sass": "^1.1.0-beta",
