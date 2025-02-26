@@ -1924,8 +1924,8 @@ homedir-polyfill@^1.0.0:
     parse-passwd "^1.0.0"
 
 hosted-git-info@^2.1.4:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.1.5.tgz#0ba81d90da2e25ab34a332e6ec77936e1598118b"
+  version "2.8.9"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
 
 htmlparser2@3.8.x:
   version "3.8.3"
@@ -3813,12 +3813,6 @@ tildify@^1.0.0:
   resolved "https://registry.yarnpkg.com/tildify/-/tildify-1.2.0.tgz#dcec03f55dca9b7aa3e5b04f21817eb56e63588a"
   dependencies:
     os-homedir "^1.0.0"
-
-tilt.js@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/tilt.js/-/tilt.js-1.1.5.tgz#44537217be21578d899ae59f183c8848b9707841"
-  dependencies:
-    jquery "^3.1.1"
 
 time-stamp@^1.0.0:
   version "1.0.1"
